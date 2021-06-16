@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# this command below to attach tmux session if it exist, else will create session with specify cwd
+
+tmux attach -t $1 || tmux new -s $1 -c $2

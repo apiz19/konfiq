@@ -1,0 +1,183 @@
+#!/bin/sh
+
+# MIT License
+
+# Copyright (C) 2020 Rizqi Nur Assyaufi <bandithijo@gmail.com>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+## FreeBSD
+#mute=$(sysctl -n dev.acpi_ibm.0.mute)
+#if [ $mute = "1" ]; then
+#    echo "MUTE"
+#elif [ $mute = "0" ]; then
+#    volume=`mixer vol | awk '{print $(NF)}' | cut -d ":" -f1`
+#    echo $volume"%"
+#else
+#    echo "ERROR"
+#fi
+
+# ou = speaker out
+# in = microphone in
+
+
+#      
+
+# GNU/Linux
+
+# case $BLOCK_BUTTON in
+# 	1) setsid -f "$TERMINAL" -e pulsemixer ;;
+# 	2) pamixer -t ;;
+# 	# 4) pamixer --allow-boost -i 1 && kill 34 $(pidof dwmblocks) ;;
+# 	# 5) pamixer --allow-boost -d 1 && kill 34 $(pidof dwmblocks) ;;
+# esac
+
+# PulseAudio
+ou_mute=$(pamixer --get-mute)
+in_mute=$(pamixer --default-source 1 --get-mute)
+ou_vol=$(pamixer --get-volume)
+in_vol=$(pamixer --default-source 1 --get-volume-human)
+
+# Alsa
+# ou_mute=$(awk -F"[][]" '/Left:/ { print $4 }' <(amixer sget Master))
+# in_mute=$(awk -F"[][]" '/Left:/ { print $4 }' <(amixer sget Capture))
+# ou_vol=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master) | cut -f 1 -d '%')
+# in_vol=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Capture) | cut -f 1 -d '%')
+
+jack_stat=$($HOME/.local/bin/has_headphone)
+# check_bluetooth=$(pacmd list-sinks | grep 'Headset' | awk '{print $10}' | tr -d ')')
+
+# icon_ou_on_bt="﫽"
+# icon_ou_off_bt="﫾"
+# icon_ou_on_hs=""
+# icon_ou_off_hs=""
+# icon_ou_on_sp=""
+# icon_ou_off_sp=""
+
+# function check_out() {
+#     if  ([ $in_mute = "true" ]  || [ $in_mute = "off" ]) && ([ $check_bluetooth = "no" ]  || [ $check_bluetooth = "off" ]); then
+#         printf "%s" "$icon_in_off"
+#     # elif ([ $in_mute = "false" ] || [ $in_mute = "on" ]); then
+#     #     printf "%s%%" "$icon_in_on $in_vol"
+#     # elif ([ $in_mute = "true" ]  || [ $in_mute = "off" ]); then
+#     #     printf "%s" "$icon_in_off"
+#     # elif ([ $in_mute = "false" ] || [ $in_mute = "on" ]); then
+#     #     printf "%s%%" "$icon_in_on $in_vol"
+#     else
+#         printf "$icon_ou_off ERROR"
+#     fi
+# }
+# function check_output() {
+#     if [ $check_bluetooth = "no" ] && [ $ou_mute = "true" ]; then
+#         printf "%s" "$icon_ou_off_bt"
+#     elif ([ $check_bluetooth = "yes" ] || [ $check_bluetooth = "on" ]) && ([ $ou_mute = "false" ]  || [ $ou_mute = "on" ]); then
+#         printf "%s %s" "$icon_ou_on_bt" "$ou_vol"
+#     if ([ $jack_stat = "no" ] || [ $jack_stat = "off" ]) && ([ $ou_mute = "true" ]  || [ $ou_mute = "off" ]); then
+#         printf "%s" "$icon_ou_off_hs"
+#     elif ([ $jack_stat = "yes" ] || [ $jack_stat = "on" ]) && ([ $ou_mute = "false" ]  || [ $ou_mute = "on" ]); then
+#         printf "%s %s" "$icon_ou_on_hs" "$ou_vol"
+#     elif ([ $jack_stat = "no" ] || [ $jack_stat = "off" ]) && \
+#       ([ $check_bluetooth = "no" ] || [ $check_bluetooth = "off" ]) && \
+#       ([ $ou_mute = "true" ]  || [ $ou_mute = "off" ]); then
+#         printf "%s" "$icon_ou_off_sp"
+#     elif ([ $jack_stat = "yes" ] || [ $jack_stat = "on" ]) && \
+#       ([ $check_bluetooth = "no" ] || [ $check_bluetooth = "off" ]) && \
+#       ([ $ou_mute = "true" ]  || [ $ou_mute = "off" ]); then
+#         printf "%s %s" "$icon_ou_on_sp" "$ou_vol"
+#     else
+#         printf "$icon_ou_off ERROR"
+#     fi
+#     fi
+#   }
+
+icon_in_on=""
+icon_in_off=""
+
+function check_mic() {
+    if  ([ $in_mute = "true" ]  || [ $in_mute = "off" ]); then
+        # printf "%s" "$icon_in_off"
+        echo -n "%{F#4dc0ae}$icon_in_off%{F-}"
+
+    elif ([ $in_mute = "false" ] || [ $in_mute = "on" ]); then
+        # printf "%s%%" "$icon_in_on $in_vol"
+        echo -n "%{F#4dc0ae}$icon_in_on%{F-} %{F#f3cf9e}$in_vol%{F-}"
+    else
+        printf "$icon_ou_off ERROR"
+    fi
+}
+
+case $1 in
+  mic | -m)
+    echo $(check_mic)
+    ;;
+esac
+
+
+# TESTING BLUETOOTH
+# if ([ $check_bluetooth = "yes" ] || [ $check_bluetooth = "on" ]); then
+#     icon_ou_on="﫽"
+#     icon_ou_off="﫾"
+# elif ([ $jack_stat = "no" ] || [ $jack_stat = "off" ]); then
+#     icon_ou_on=""
+#     icon_ou_off=""
+# if ([ $jack_stat = "yes" ] || [ $jack_stat = "on" ]); then
+#     icon_ou_on=""
+#     icon_ou_off=""
+# fi
+
+# THIS ORIG BY BANDIT
+# if   ([ $ou_mute = "true" ]  || [ $ou_mute = "off" ]) && ([ $in_mute = "true" ]  || [ $in_mute = "off" ]); then
+#     printf "$icon_ou_off $icon_in_off"
+# elif ([ $ou_mute = "true" ]  || [ $ou_mute = "off" ]) && ([ $in_mute = "false" ] || [ $in_mute = "on" ]); then
+#     printf "$icon_ou_off $icon_in_on $in_vol"
+# elif ([ $ou_mute = "false" ] || [ $ou_mute = "on" ])  && ([ $in_mute = "true" ]  || [ $in_mute = "off" ]); then
+#     printf "$icon_ou_on $ou_vol $icon_in_off"
+# elif ([ $ou_mute = "false" ] || [ $ou_mute = "on" ])  && ([ $in_mute = "false" ] || [ $in_mute = "on" ]); then
+#     printf "$icon_ou_on $ou_vol $icon_in_on $in_vol"
+# else
+#     printf "$icon_ou_off ERROR"
+# fi
+
+# MODIFIED BY ME
+# USING `echo` to work with % sign
+# if   ([ $ou_mute = "true" ]  || [ $ou_mute = "off" ]) && ([ $in_mute = "true" ]  || [ $in_mute = "off" ]); then
+#     echo "$icon_ou_off $icon_in_off"
+# elif ([ $ou_mute = "true" ]  || [ $ou_mute = "off" ]) && ([ $in_mute = "false" ] || [ $in_mute = "on" ]); then
+#     echo "$icon_ou_off $icon_in_on $in_vol%"
+# elif ([ $ou_mute = "false" ] || [ $ou_mute = "on" ])  && ([ $in_mute = "true" ]  || [ $in_mute = "off" ]); then
+#     echo "$icon_ou_on $ou_vol% $icon_in_off"
+# elif ([ $ou_mute = "false" ] || [ $ou_mute = "on" ])  && ([ $in_mute = "false" ] || [ $in_mute = "on" ]); then
+#     echo "$icon_ou_on $ou_vol% $icon_in_on $in_vol%"
+# else
+#     echo "$icon_ou_off ERROR"
+# fi
+
+
+# MODIFIED for working with % sign using printf
+    # if   ([ $ou_mute = "true" ]  || [ $ou_mute = "off" ]) && ([ $in_mute = "true" ]  || [ $in_mute = "off" ]); then
+    #     printf "%s %s" "$icon_ou_off" "$icon_in_off"
+    # elif ([ $ou_mute = "true" ]  || [ $ou_mute = "off" ]) && ([ $in_mute = "false" ] || [ $in_mute = "on" ]); then
+    #     printf "%s %s%%" "$icon_ou_off" "$icon_in_on $in_vol"
+    # elif ([ $ou_mute = "false" ] || [ $ou_mute = "on" ])  && ([ $in_mute = "true" ]  || [ $in_mute = "off" ]); then
+    #     printf "%s%% %s" "$icon_ou_on $ou_vol" "$icon_in_off"
+    # elif ([ $ou_mute = "false" ] || [ $ou_mute = "on" ])  && ([ $in_mute = "false" ] || [ $in_mute = "on" ]); then
+    #     printf "%s%% %s%%" "$icon_ou_on $ou_vol" "$icon_in_on $in_vol"
+    # else
+    #     printf "$icon_ou_off ERROR"
+    # fi

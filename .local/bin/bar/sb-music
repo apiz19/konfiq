@@ -1,0 +1,190 @@
+#!/bin/bash
+
+# A dwm_bar function that shows the current artist, track, duration, and status from Spotify using playerctl
+# Joe Standring <git@joestandring.com>
+# GNU GPLv3
+
+# Dependencies: spotify/spotifyd, playerctl
+
+# NOTE: The official spotify client does not provide the track position or shuffle status through playerctl. This does work through spotifyd however.
+
+# TODO
+# add scrolling text with `zscroll`
+# fix conflict with spotify
+
+# case $BLOCK_BUTTON in
+# 	1) playerctl play-pause;;
+#   3) playerctl stop ;;  # right click, pause/unpause
+# 	# 3) cmus-remote --prev ;;  # scroll up, previous
+# 	# 5) cmus-remote --next ;;  # scroll down, next
+#   # 6) cmus-remote --shuffle ;;
+# 	# *) cmus-remote -Q >/dev/null 2>&1 ;;
+# esac
+
+
+musik_status () {
+#   # C_ARTIST=$(cmus-remote -Q | grep -a '^tag artist' | awk '{gsub("tag artist ", "");print}')
+#   # C_TRACK=$(cmus-remote -Q | grep -a '^tag title' | awk '{gsub("tag title ", "");print}')
+#   # C_POSITION=$(cmus-remote -Q | grep -a '^position' | awk '{gsub("position ", "");print}')
+#   # C_DURATION=$(cmus-remote -Q | grep -a '^duration' | awk '{gsub("duration ", "");print}')
+#   # C_STATUS=$(cmus-remote -Q | grep -a '^status' | awk '{gsub("status ", "");print}')
+#   # C_SHUFFLE=$(cmus-remote -Q | grep -a '^set shuffle' | awk '{gsub("set shuffle ", "");print}')
+  ARTIST=$(playerctl metadata artist)
+  TRACK=$(playerctl metadata title)
+  STATUS="$(playerctl metadata --format '{{playerName}}: {{lc(status)}} ' '{{duration(position)}}|{{duration(mpris:length)}}')"
+  SPOT_STAT="spotify: playing"
+#   ICON_PLAY="契"
+#   ICON_PAUSE="懶"
+#   ICON_SHUFFLE=" 咽"
+
+  if [[ "$STATUS" == "$SPOT_STAT" ]]; then
+
+      # if [[ "$STATUS" == "$SPOT_STAT" ]]; then
+          ICON_STATUS="契"
+          printf " %s %s - %s " "$ICON_STATUS" "$ARTIST" "$TRACK"
+      elif [[ "$STATUS" == "spotify: paused" ]]; then
+          ICON_STATUS="懶"
+          printf " %s %s - %s " "$ICON_STATUS" "$ARTIST" "$TRACK"
+        # else
+        #   printf "%s" "wk"
+        # elif [[ "$STATUS" == "spotify: paused" ]]; then
+        #   ICON_STATUS="懶"
+        #   printf " %s %s - %s " "$ICON_STATUS" "$ARTIST" "$TRACK"
+        # else
+  fi
+
+  if [[ "$STATUS" != "$SPOT_STAT" ]] && [[ $TRACK = "No players found" ]]; then
+
+      # if [[ "$STATUS" != "$SPOT_STAT" ]]; then
+          printf " %s - %s "  "$ARTIST" "$TRACK"
+      else
+          printf "%s" ""
+      fi
+
+    # else [[ $(playerctl status) != "Playing" ]];
+    #   printf "%s" " "
+  # fi
+}
+
+# musik_status
+
+  # elif ps -C cmus > /dev/null; then
+
+  #     if [ "$C_STATUS" = "playing" ]; then
+  #         printf "%s%s %s - %s " "$ICON_PLAY" "$C_SHUFFLE" "$C_ARTIST" "$C_TRACK"
+  #         printf "%0d:%02d/" $((C_POSITION%3600/60)) $((C_POSITION%60))
+  #         printf "%0d:%02d " $((C_DURATION%3600/60)) $((C_DURATION%60))
+  #     else
+  #         printf "%s%s %s - %s " "$ICON_PAUSE" "$C_SHUFFLE" "$C_ARTIST" "$C_TRACK"
+  #         printf "%0d:%02d/" $((C_POSITION%3600/60)) $((C_POSITION%60))
+  #         printf "%0d:%02d " $((C_DURATION%3600/60)) $((C_DURATION%60))
+  #     fi
+
+  #     if [ "$C_SHUFFLE" = "true" ]; then
+  #         printf "%s%s %s - %s " "$ICON_SHUFFLE" "$C_SHUFFLE" "$C_ARTIST" "$C_TRACK"
+  #         printf "%0d:%02d/" $((C_POSITION%3600/60)) $((C_POSITION%60))
+  #         printf "%0d:%02d " $((C_DURATION%3600/60)) $((C_DURATION%60))
+  #     else
+  #         printf "%s%s %s - %s " "$ICON_SHUFFLE" "$C_SHUFFLE" "$C_ARTIST" "$C_TRACK"
+  #         printf "%0d:%02d/" $((C_POSITION%3600/60)) $((C_POSITION%60))
+  #         printf "%0d:%02d " $((C_DURATION%3600/60)) $((C_DURATION%60))
+  #     fi
+
+
+
+# dwm_spotify () {
+#     if ps -C spotify > /dev/null; then
+#         ARTIST=$(playerctl metadata artist)
+#         TRACK=$(playerctl metadata title)
+#         POSITION=$(playerctl position | sed 's/..\{6\}$//')
+#         DURATION=$(playerctl metadata mpris:length | sed 's/.\{6\}$//')
+#         STATUS=$(playerctl status)
+#         SHUFFLE=$(playerctl shuffle)
+
+#             if [ "$STATUS" = "Playing" ]; then
+#                 STATUS="契"
+#             else
+#                 STATUS="懶"
+#             fi
+
+#             if [ "$SHUFFLE" = "On" ]; then
+#                 SHUFFLE=" 咽"
+#             else
+#                 SHUFFLE=""
+#             fi
+
+#         printf " %s %s - %s " "$STATUS" "$ARTIST" "$TRACK"
+#         # printf "%0d:%02d/" $((POSITION%3600/60)) $((POSITION%60))
+#         # printf "%0d:%02d " $((DURATION%3600/60)) $((DURATION%60))
+#     fi
+#     exit 1
+# }
+
+# dwm_brave() {
+#     if ps -C $BROWSER > /dev/null; then
+#         SPOT_STAT=$(playerctl metadata --format '{{playerName}}: {{lc(status)}} ' '{{duration(position)}}|{{duration(mpris:length)}}')
+#         if [ "$SPOT_STAT" = "spotify: playing" ]; then
+#           exit 1
+#         else
+
+#           AUTHOR=$(playerctl metadata artist)
+#           PLAYING=$(playerctl metadata title)
+
+#           if [[ -n $AUTHOR ]]; then
+#               printf " %s - %s "  "$AUTHOR" "$PLAYING"
+#           else
+#               printf " %s " ""
+#           fi
+#         fi
+#     fi
+#     exit 1
+# }
+
+case $1 in
+  # spotify     | -s)     dwm_spotify;;
+  # browser     | -b)     dwm_brave;;
+  music_stat  | -m)     musik_status;;
+esac
+
+
+# dwm_spotify
+# dwm_brave
+
+# function rotate_string(){
+# 		INDEX=$2
+# 		DIST=$3
+# 		[ $(($DIST+$INDEX-1)) -ge ${#1} ] && TAIL=${1:0:$(($DIST-${#1}+$INDEX))}
+# 		[[ -n $TAIL ]] && echo "${1:$INDEX:$DIST}$TAIL" || echo "${1:$INDEX:$DIST}"
+# }
+
+# DIST=${DISTANCE:=20}
+# INTERVAL=${INTERVAL:=1}
+# INDEX=0
+# while true; do
+# 	if meta_data=$(
+# 		dbus-send \
+# 			--print-reply \
+# 			--dest=org.mpris.MediaPlayer2.spotify \
+# 			/org/mpris/MediaPlayer2 \
+# 			org.freedesktop.DBus.Properties.Get \
+# 			string:org.mpris.MediaPlayer2.Player \
+# 			string:Metadata 2> /dev/null); then
+# 		song=$(
+# 				echo "$meta_data" \
+# 			| sed -n '/title/{n;p}' \
+# 			| cut -d '"' -f 2)
+# 		artist=$(
+# 				echo "$meta_data" \
+# 			| sed -n '/artist/{n;n;p}' \
+# 			| cut -d '"' -f 2)
+# 		[ -n "$song" -a -n "$artist" ] && string="$song - $artist - "  || string=""
+
+# 		echo "$(rotate_string "$string" $INDEX $DIST)"
+
+# 		INDEX=$((INDEX + 1))
+# 		[ $INDEX -ge ${#string} ] && INDEX=0
+# 	fi
+
+# 	sleep $INTERVAL &
+# 	wait
+# done

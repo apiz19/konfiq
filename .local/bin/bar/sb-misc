@@ -1,0 +1,48 @@
+#!/bin/sh
+# This script is to showing indicator icon if running
+
+# if pgrep -f ffmpeg > /dev/null; then
+#     echo " REC"
+# elif pgrep -l kazam > /dev/null; then
+#     echo " REC"
+# elif pgrep -f simplescreenrecorder > /dev/null; then
+#     echo " REC"
+# elif pgrep -f torrc > /dev/null; then
+#     echo " TOR"
+# elif pgrep -f pppd > /dev/null; then
+#     echo " VPN"
+# elif pgrep -f 'python2 /usr/bin/key-mon' > /dev/null; then
+#     echo " "
+# fi
+
+# if pgrep -f puma > /dev/null; then
+#     echo " PUMA "
+# elif pgrep -f sudo > /dev/null; then
+#     echo " SUDO "; \
+#     dunstify " SUDO Activated!" --urgency=critical -t 1000 -r 1
+# fi
+
+# notifysudo() {
+#     dunstify " SUDO Activated! $notif" --urgency=critical -t 1000 -r 1
+#     printf '2' > ~/.sudopid
+# }
+
+# changing sudo as doas
+if pgrep -f "doas rsync" > /dev/null; then
+    printf " ";
+elif pgrep -f "doas pacman" > /dev/null; then
+    printf " ";
+elif pgrep -f "doas yay" > /dev/null; then
+    printf " ";
+elif pgrep -f "transmission-daemon" > /dev/null; then
+    printf " ";
+elif pgrep -f ffmpeg > /dev/null 2>&1; then
+    blink=$(date +%s);
+    if [ $((blink % 2)) -eq 0 ]; then
+      echo "  REC";
+    else
+      echo "   REC";
+    fi;
+elif pgrep -f "doas" > /dev/null; then # add this to last
+    printf " ";
+fi

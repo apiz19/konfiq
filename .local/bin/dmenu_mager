@@ -1,0 +1,55 @@
+#!/bin/bash
+# File              : dmenu_mager
+# License           : MIT License
+# Author            : M. Nabil Adani <nblid48@gmail.com>
+# Date              : Jumat, 15/05/2020 13:12 WIB
+# Last Modified Date: Minggu, 11/10/2020 12:44 WIB
+# Last Modified By  : M. Nabil Adani <nblid48@gmail.com>
+
+DMENU="rofi -dmenu -i -p Mager"
+# OPTIONS = [[label, command]]
+OPTIONS='''
+[
+  [ "kill",                   "dmenu_kill" ],
+  [ "monitor",                "dmenu_monitor" ],
+  [ "pass",                   "rofi-pass" ],
+  [ "power",                  "rofi-power" ],
+  [ "rekam gambar bergerak",  "dmenu_record" ],
+  [ "screenshot",             "dmenu_screenshot" ],
+  [ "pusat bahasa",           "dmenu-trans" ],
+  [ "kbbi",                   "dmenu-kbbi" ],
+  [ "mount",                  "dmenu-mount" ],
+  [ "mans",                   "dmenu-mans" ],
+  [ "wifi",                   "networkmanager_dmenu" ],
+  [ "youtube",                "st -e ytfzf -tfs" ],
+  [ "ambient sounds",         "ambi-sound" ],
+  [ "vimwiki",                "st -e nvim -c VimwikiIndex" ],
+  [ "bluetooth",              "dmenu_bluetooth" ],
+  [ "evince",                 "evince" ],
+  [ "droidcam",               "dmenu-droidcam" ],
+  [ "iptv",                   "dmenu_iptv" ]
+]
+'''
+  # [ "task",                   "st -e task" ],
+  # [ "window",                 "dmenu_window" ],
+  # [ "qutebrowser",            "dmenu_qutebrowser" ],
+  # [ "droidcam audio only",    "droidcam-cli -a 192.168.100.2 4747" ],
+  # [ "droidcam video & audio", "droidcam-cli -a -v 192.168.43.1 4747" ],
+  # [ "droidcam video only",    "droidcam-cli 192.168.43.1 4747" ],
+  # [ "kill droidcam",          "pkill droidcam-cli" ],
+  # [ "mpdmenu",                "dmenu_mpdmenu" ],
+  # [ "mpv",                    "dmenu_mpv" ],
+  # [ "scrcpy",                 "adb connect 192.168.43.1:5555 ; scrcpy -S -b 2M -m 720p --push-target /sdcard/Download &" ],
+  # [ "switcher",               "dmenu_switcher" ],
+  # [ "sxhkd",                  "dmenu_sxhkd" ],
+  # [ "systemd",                "dmenu_systemd" ],
+  # [ "umount iso",             "dmenu_iso" ],
+  # [ "viper restart",          "viper restart" ],
+  # [ "juypiter lab",           "chromium --new-window --app=http://localhost:8888/lab" ],
+  # [ "photopea",               "chromium --new-window --app=https://www.photopea.com/" ],
+  # [ "trello",                 "chromium --new-window --app=https://trello.com/" ],
+  # [ "facebook",               "chromium --new-window --app=https://m.facebook.com/" ],
+  # [ "tweetDeck",              "chromium --new-window --app=https://tweetdeck.twitter.com/" ],
+
+label=$(echo $OPTIONS | jq -r "sort | .[][0]" | $DMENU)
+exec $(echo $OPTIONS | jq -r ".[] | select(.[0] == \"$label\") | .[1]")

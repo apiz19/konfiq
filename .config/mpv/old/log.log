@@ -1,0 +1,933 @@
+[   0.004][v][cplayer] mpv 0.33.0-dirty Copyright © 2000-2020 mpv/MPlayer/mplayer2 projects
+[   0.004][v][cplayer]  built on UNKNOWN
+[   0.004][v][cplayer] FFmpeg library versions:
+[   0.004][v][cplayer]    libavutil       56.51.100
+[   0.004][v][cplayer]    libavcodec      58.91.100
+[   0.004][v][cplayer]    libavformat     58.45.100
+[   0.004][v][cplayer]    libswscale      5.7.100
+[   0.004][v][cplayer]    libavfilter     7.85.100
+[   0.004][v][cplayer]    libswresample   3.7.100
+[   0.004][v][cplayer] FFmpeg version: n4.3.2
+[   0.004][v][cplayer] 
+[   0.004][v][cplayer] Configuration: /usr/bin/waf configure --prefix=/usr --confdir=/etc/mpv --enable-cdda --enable-dvb --enable-dvdnav --enable-libarchive --enable-libmpv-shared --disable-build-date
+[   0.004][v][cplayer] List of enabled features: 52arch alsa asm caca cdda cplayer cplugins cuda-hwaccel cuda-interop debug-build drm dvbin dvdnav egl egl-drm egl-helpers egl-x11 ffmpeg ffnvcodec gbm gbm.h gl gl-wayland glibc-thread-name glob glob-posix gpl iconv jack javascript jpeg lcms2 libarchive libass libavdevice libbluray libdl libm libmpv-shared libplacebo librt linux-fstatfs linux-input-event-codes lua memfd_create optimize plain-gl posix posix-or-mingw pthreads pulse rubberband shaderc shaderc-shared stdatomic uchardet vaapi vaapi-drm vaapi-egl vaapi-vulkan vaapi-wayland vaapi-x-egl vaapi-x11 vdpau vt.h vulkan wayland wayland-protocols x11 xv zlib
+[   0.004][v][cplayer] Command line options: 'https://www.youtube.com/watch?v=tnZ2xPu667w' '--log-file=log.log'
+[   0.004][v][cplayer] mpv 0.33.0-dirty Copyright © 2000-2020 mpv/MPlayer/mplayer2 projects
+[   0.004][v][cplayer]  built on UNKNOWN
+[   0.004][v][cplayer] FFmpeg library versions:
+[   0.004][v][cplayer]    libavutil       56.51.100
+[   0.004][v][cplayer]    libavcodec      58.91.100
+[   0.004][v][cplayer]    libavformat     58.45.100
+[   0.004][v][cplayer]    libswscale      5.7.100
+[   0.004][v][cplayer]    libavfilter     7.85.100
+[   0.004][v][cplayer]    libswresample   3.7.100
+[   0.004][v][cplayer] FFmpeg version: n4.3.2
+[   0.004][v][cplayer] 
+[   0.004][v][cplayer] Configuration: /usr/bin/waf configure --prefix=/usr --confdir=/etc/mpv --enable-cdda --enable-dvb --enable-dvdnav --enable-libarchive --enable-libmpv-shared --disable-build-date
+[   0.004][v][cplayer] List of enabled features: 52arch alsa asm caca cdda cplayer cplugins cuda-hwaccel cuda-interop debug-build drm dvbin dvdnav egl egl-drm egl-helpers egl-x11 ffmpeg ffnvcodec gbm gbm.h gl gl-wayland glibc-thread-name glob glob-posix gpl iconv jack javascript jpeg lcms2 libarchive libass libavdevice libbluray libdl libm libmpv-shared libplacebo librt linux-fstatfs linux-input-event-codes lua memfd_create optimize plain-gl posix posix-or-mingw pthreads pulse rubberband shaderc shaderc-shared stdatomic uchardet vaapi vaapi-drm vaapi-egl vaapi-vulkan vaapi-wayland vaapi-x-egl vaapi-x11 vdpau vt.h vulkan wayland wayland-protocols x11 xv zlib
+[   0.004][d][global] config path: '' -> '/home/apiz19/.config/mpv'
+[   0.004][d][global] user path: '~~home/' -> '/home/apiz19/.config/mpv'
+[   0.004][d][global] user path: '~~old_home/' -> '/home/apiz19/.mpv'
+[   0.004][d][global] config path: 'encoding-profiles.conf' -/-> '/home/apiz19/.config/mpv/encoding-profiles.conf'
+[   0.004][d][global] config path: 'encoding-profiles.conf' -/-> '/home/apiz19/.mpv/encoding-profiles.conf'
+[   0.004][d][global] config path: 'encoding-profiles.conf' -> '/etc/mpv/encoding-profiles.conf'
+[   0.004][v][cplayer] Reading config file /etc/mpv/encoding-profiles.conf
+[   0.005][v][cplayer] Applying profile 'default'...
+[   0.005][d][global] config path: 'mpv.conf' -> '/home/apiz19/.config/mpv/mpv.conf'
+[   0.005][d][global] config path: 'config' -/-> '/home/apiz19/.config/mpv/config'
+[   0.005][d][global] config path: 'mpv.conf' -/-> '/home/apiz19/.mpv/mpv.conf'
+[   0.005][d][global] config path: 'config' -/-> '/home/apiz19/.mpv/config'
+[   0.005][d][global] config path: 'mpv.conf' -/-> '/etc/mpv/mpv.conf'
+[   0.005][d][global] config path: 'config' -/-> '/etc/mpv/config'
+[   0.005][v][cplayer] Reading config file /home/apiz19/.config/mpv/mpv.conf
+[   0.006][v][cplayer] Applying profile 'default'...
+[   0.006][v][cplayer] Setting option 'input-ipc-server' = '/tmp/mpvsocket' (flags = 4)
+[   0.006][v][cplayer] Setting option 'save-position-on-quit' = 'no' (flags = 4)
+[   0.006][v][cplayer] Setting option 'msg-module' = '' (flags = 4)
+[   0.006][v][cplayer] Setting option 'msg-color' = '' (flags = 4)
+[   0.006][v][cplayer] Setting option 'term-osd-bar' = '' (flags = 4)
+[   0.006][v][cplayer] Setting option 'use-filedir-conf' = '' (flags = 4)
+[   0.006][v][cplayer] Setting option 'background' = '#002b36' (flags = 4)
+[   0.006][v][cplayer] Setting option 'keep-open' = '' (flags = 4)
+[   0.006][v][cplayer] Setting option 'autofit-larger' = '97%x97%' (flags = 4)
+[   0.006][v][cplayer] Setting option 'cursor-autohide-fs-only' = '' (flags = 4)
+[   0.006][v][cplayer] Setting option 'input-media-keys' = 'no' (flags = 4)
+[   0.006][v][cplayer] Setting option 'cursor-autohide' = '1000' (flags = 4)
+[   0.006][v][cplayer] Setting option 'prefetch-playlist' = 'yes' (flags = 4)
+[   0.006][v][cplayer] Setting option 'force-seekable' = 'yes' (flags = 4)
+[   0.006][v][cplayer] Setting option 'screenshot-format' = 'png' (flags = 4)
+[   0.006][v][cplayer] Setting option 'screenshot-png-compression' = '8' (flags = 4)
+[   0.006][v][cplayer] Setting option 'screenshot-template' = '~/Pictures/ScreenShots/mpv/ScreenShot from %F (%P) %n' (flags = 4)
+[   0.006][v][cplayer] Setting option 'hls-bitrate' = 'max' (flags = 4)
+[   0.006][v][cplayer] Setting option 'ytdl-format' = 'bestvideo[height<=?720][fps<=?30][vcodec!=?vp9][protocol!=http_dash_segments]+bestaudio/best' (flags = 4)
+[   0.006][v][cplayer] Setting option 'cache' = 'yes' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-level' = '1' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-duration' = '2500' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-status-msg' = '${time-pos} / ${duration}${?percent-pos:　(${percent-pos}%)}${?frame-drop-count:${!frame-drop-count==0:　Dropped: ${frame-drop-count}}}\n${?chapter:Chapter: ${chapter}}' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-font' = 'FuraCode Nerd Font' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-font-size' = '22' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-color' = '#CCFFFFFF' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-border-color' = '#DD322640' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-bar-align-y' = '0' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-border-size' = '2' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-bar-h' = '2' (flags = 4)
+[   0.006][v][cplayer] Setting option 'osd-bar-w' = '60' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-auto' = 'all' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-file-paths-append' = 'ass' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-file-paths-append' = 'srt' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-file-paths-append' = 'sub' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-file-paths-append' = 'subs' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-file-paths-append' = 'subtitles' (flags = 4)
+[   0.006][v][cplayer] Setting option 'demuxer-mkv-subtitle-preroll' = '' (flags = 4)
+[   0.006][v][cplayer] Setting option 'embeddedfonts' = 'yes' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-fix-timing' = 'no' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-ass-force-style' = 'Kerning=yes' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-use-margins' = '' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-ass-force-margins' = '' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-font' = 'FuraCode Nerd Font' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-font-size' = '26' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-color' = '#FFFFFFFF' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-border-color' = '#FF262626' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-border-size' = '3.2' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-shadow-offset' = '1' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-shadow-color' = '#33000000' (flags = 4)
+[   0.006][v][cplayer] Setting option 'sub-spacing' = '0.5' (flags = 4)
+[   0.006][v][cplayer] Setting option 'audio-file-auto' = 'fuzzy' (flags = 4)
+[   0.006][v][cplayer] Setting option 'audio-pitch-correction' = 'yes' (flags = 4)
+[   0.006][v][cplayer] Setting option 'volume-max' = '200' (flags = 4)
+[   0.006][v][cplayer] Setting option 'volume' = '100' (flags = 4)
+[   0.006][v][cplayer] Setting option 'log-file' = 'log.log' (flags = 8)
+[   0.007][d][global] config path: 'input.conf' -> '/home/apiz19/.config/mpv/input.conf'
+[   0.007][d][global] config path: 'input.conf' -/-> '/home/apiz19/.mpv/input.conf'
+[   0.007][d][global] config path: 'input.conf' -/-> '/etc/mpv/input.conf'
+[   0.007][d][global] user path: '/home/apiz19/.config/mpv/input.conf' -> '/home/apiz19/.config/mpv/input.conf'
+[   0.007][v][ifo_dvdnav] Opening /home/apiz19/.config/mpv/input.conf
+[   0.007][v][bdmv/bluray] Opening /home/apiz19/.config/mpv/input.conf
+[   0.007][v][file] Opening /home/apiz19/.config/mpv/input.conf
+[   0.007][d][file] resize stream to 131072 bytes, drop 0 bytes
+[   0.007][d][file] Stream opened successfully.
+[   0.007][v][input] Parsing input config file /home/apiz19/.config/mpv/input.conf
+[   0.008][v][input] Input config file /home/apiz19/.config/mpv/input.conf parsed: 8 binds
+[   0.008][d][global] user path: 'log.log' -> 'log.log'
+[   0.008][d][osc] Loading lua script @osc.lua...
+[   0.008][d][ytdl_hook] Loading lua script @ytdl_hook.lua...
+[   0.008][d][stats] Loading lua script @stats.lua...
+[   0.008][d][console] Loading lua script @console.lua...
+[   0.008][d][auto_profiles] Loading lua script @auto_profiles.lua...
+[   0.008][d][osc] loading mp.defaults
+[   0.008][d][ytdl_hook] loading mp.defaults
+[   0.008][d][global] user path: '/tmp/mpvsocket' -> '/tmp/mpvsocket'
+[   0.008][d][stats] loading mp.defaults
+[   0.008][d][global] config path: 'scripts' -> '/home/apiz19/.config/mpv/scripts'
+[   0.008][d][global] config path: 'scripts' -/-> '/home/apiz19/.mpv/scripts'
+[   0.008][d][global] config path: 'scripts' -/-> '/etc/mpv/scripts'
+[   0.009][e][cplayer] Cannot find main.* for any supported scripting backend in: /home/apiz19/.config/mpv/scripts/mpvSockets
+[   0.009][d][seek_to] Loading lua script /home/apiz19/.config/mpv/scripts/seek-to.lua...
+[   0.009][d][youtube_quality] Loading lua script /home/apiz19/.config/mpv/scripts/youtube-quality.lua...
+[   0.009][d][mpv_concat] Loading lua script /home/apiz19/.config/mpv/scripts/mpv-concat.lua...
+[   0.009][d][image] Loading lua script /home/apiz19/.config/mpv/scripts/image.lua...
+[   0.009][v][ipc] Starting IPC master
+[   0.009][v][ipc] Listening to IPC socket.
+[   0.009][d][modules] Loading lua script /home/apiz19/.config/mpv/scripts/modules.lua...
+[   0.009][v][cplayer] Waiting for scripts...
+[   0.009][d][seek_to] loading mp.defaults
+[   0.010][d][mpv_concat] loading mp.defaults
+[   0.010][d][auto_profiles] loading mp.defaults
+[   0.010][d][console] loading mp.defaults
+[   0.010][d][youtube_quality] loading mp.defaults
+[   0.010][d][image] loading mp.defaults
+[   0.011][d][modules] loading mp.defaults
+[   0.012][d][osc] loading @osc.lua
+[   0.013][d][ytdl_hook] loading @ytdl_hook.lua
+[   0.014][d][mpv_concat] loading file /home/apiz19/.config/mpv/scripts/mpv-concat.lua
+[   0.014][v][cplayer] Set property: keep-open="yes" -> 1
+[   0.015][v][cplayer] Set property: quiet="yes" -> 1
+[   0.015][d][cplayer] Run command: define-section, flags=64, args=[name="input_mpv_concat", contents="q script-binding mpv_concat/quit\nShift+q script-binding mpv_concat/quit-watch-later\nctrl+t script-binding mpv_concat/put_time\nctrl+s script-binding mpv_concat/show_times\nctrl+r script-binding mpv_concat/reset_segment\nctrl+d script-binding mpv_concat/delete_segment\nctrl+p script-binding mpv_concat/preview_concat\nctrl+w script-binding mpv_concat/write_concat\n", flags="default"]
+[   0.015][d][cplayer] Run command: enable-section, flags=64, args=[name="input_mpv_concat", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.015][d][cplayer] Run command: define-section, flags=64, args=[name="input_forced_mpv_concat", contents="", flags="force"]
+[   0.015][d][cplayer] Run command: enable-section, flags=64, args=[name="input_forced_mpv_concat", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.015][d][ytdl_hook] reading options for ytdl_hook 
+[   0.015][d][global] config path: 'script-opts/ytdl_hook.conf' -/-> '/home/apiz19/.config/mpv/script-opts/ytdl_hook.conf'
+[   0.015][d][global] config path: 'script-opts/ytdl_hook.conf' -/-> '/home/apiz19/.mpv/script-opts/ytdl_hook.conf'
+[   0.015][d][global] config path: 'script-opts/ytdl_hook.conf' -/-> '/etc/mpv/script-opts/ytdl_hook.conf'
+[   0.015][d][ytdl_hook] script-opts/ytdl_hook.conf not found. 
+[   0.015][d][global] config path: 'lua-settings/ytdl_hook.conf' -/-> '/home/apiz19/.config/mpv/lua-settings/ytdl_hook.conf'
+[   0.015][d][global] config path: 'lua-settings/ytdl_hook.conf' -/-> '/home/apiz19/.mpv/lua-settings/ytdl_hook.conf'
+[   0.015][d][global] config path: 'lua-settings/ytdl_hook.conf' -/-> '/etc/mpv/lua-settings/ytdl_hook.conf'
+[   0.015][d][ytdl_hook] lua-settings/ytdl_hook.conf not found. 
+[   0.015][d][stats] loading @stats.lua
+[   0.016][d][auto_profiles] loading @auto_profiles.lua
+[   0.017][d][stats] reading options for stats 
+[   0.017][d][global] config path: 'script-opts/stats.conf' -/-> '/home/apiz19/.config/mpv/script-opts/stats.conf'
+[   0.017][d][global] config path: 'script-opts/stats.conf' -/-> '/home/apiz19/.mpv/script-opts/stats.conf'
+[   0.017][d][global] config path: 'script-opts/stats.conf' -/-> '/etc/mpv/script-opts/stats.conf'
+[   0.017][d][stats] script-opts/stats.conf not found. 
+[   0.017][d][global] config path: 'lua-settings/stats.conf' -/-> '/home/apiz19/.config/mpv/lua-settings/stats.conf'
+[   0.017][d][global] config path: 'lua-settings/stats.conf' -/-> '/home/apiz19/.mpv/lua-settings/stats.conf'
+[   0.017][d][global] config path: 'lua-settings/stats.conf' -/-> '/etc/mpv/lua-settings/stats.conf'
+[   0.017][d][stats] lua-settings/stats.conf not found. 
+[   0.018][d][seek_to] loading file /home/apiz19/.config/mpv/scripts/seek-to.lua
+[   0.018][d][modules] loading file /home/apiz19/.config/mpv/scripts/modules.lua
+[   0.019][d][youtube_quality] loading file /home/apiz19/.config/mpv/scripts/youtube-quality.lua
+[   0.019][d][console] loading @console.lua
+[   0.020][d][auto_profiles] Exiting...
+[   0.020][d][cplayer] Run command: define-section, flags=64, args=[name="input_seek_to", contents="", flags="default"]
+[   0.021][d][cplayer] Run command: enable-section, flags=64, args=[name="input_seek_to", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.021][d][youtube_quality] reading options for youtube-quality 
+[   0.021][d][global] config path: 'script-opts/youtube-quality.conf' -> '/home/apiz19/.config/mpv/script-opts/youtube-quality.conf'
+[   0.021][v][youtube_quality] Opened config file script-opts/youtube-quality.conf. 
+[   0.022][d][image] loading file /home/apiz19/.config/mpv/scripts/image.lua
+[   0.022][d][osc] reading options for osc 
+[   0.023][d][global] config path: 'script-opts/osc.conf' -> '/home/apiz19/.config/mpv/script-opts/osc.conf'
+[   0.023][v][osc] Opened config file script-opts/osc.conf. 
+[   0.023][d][cplayer] Run command: define-section, flags=64, args=[name="input_forced_seek_to", contents="", flags="force"]
+[   0.023][d][cplayer] Run command: enable-section, flags=64, args=[name="input_forced_seek_to", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.023][d][console] reading options for console 
+[   0.023][d][global] config path: 'script-opts/console.conf' -/-> '/home/apiz19/.config/mpv/script-opts/console.conf'
+[   0.023][d][global] config path: 'script-opts/console.conf' -/-> '/home/apiz19/.mpv/script-opts/console.conf'
+[   0.023][d][global] config path: 'script-opts/console.conf' -/-> '/etc/mpv/script-opts/console.conf'
+[   0.023][d][cplayer] Run command: define-section, flags=64, args=[name="input_stats", contents="i script-binding stats/display-stats\nI script-binding stats/display-stats-toggle\n", flags="default"]
+[   0.023][d][console] script-opts/console.conf not found. 
+[   0.023][d][global] config path: 'lua-settings/console.conf' -/-> '/home/apiz19/.config/mpv/lua-settings/console.conf'
+[   0.023][d][global] config path: 'lua-settings/console.conf' -/-> '/home/apiz19/.mpv/lua-settings/console.conf'
+[   0.023][d][global] config path: 'lua-settings/console.conf' -/-> '/etc/mpv/lua-settings/console.conf'
+[   0.023][d][console] lua-settings/console.conf not found. 
+[   0.023][d][cplayer] Run command: enable-section, flags=64, args=[name="input_stats", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.023][d][cplayer] Run command: define-section, flags=64, args=[name="input_forced_stats", contents="", flags="force"]
+[   0.023][d][cplayer] Run command: enable-section, flags=64, args=[name="input_forced_stats", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.023][d][cplayer] Run command: define-section, flags=64, args=[name="input_image", contents="", flags="default"]
+[   0.023][d][cplayer] Run command: enable-section, flags=64, args=[name="input_image", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.023][d][cplayer] Run command: define-section, flags=64, args=[name="input_forced_image", contents="", flags="force"]
+[   0.023][d][cplayer] Run command: enable-section, flags=64, args=[name="input_forced_image", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.024][d][cplayer] Run command: define-section, flags=64, args=[name="input_console", contents="", flags="default"]
+[   0.024][d][cplayer] Run command: define-section, flags=64, args=[name="showhide", contents="mouse_move script-binding osc/__keybinding1\nmouse_leave script-binding osc/__keybinding2\n", flags="force"]
+[   0.024][d][cplayer] Run command: enable-section, flags=64, args=[name="input_console", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.024][d][cplayer] Run command: define-section, flags=64, args=[name="showhide_wc", contents="mouse_move script-binding osc/__keybinding3\nmouse_leave script-binding osc/__keybinding4\n", flags="force"]
+[   0.024][d][cplayer] Run command: define-section, flags=64, args=[name="input_youtube_quality", contents="ctrl+f script-binding youtube_quality/quality-menu\n", flags="default"]
+[   0.024][d][cplayer] Run command: enable-section, flags=64, args=[name="showhide", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.024][d][cplayer] Run command: define-section, flags=64, args=[name="input_forced_console", contents="", flags="force"]
+[   0.024][d][cplayer] Run command: enable-section, flags=64, args=[name="showhide_wc", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.024][d][cplayer] Run command: enable-section, flags=64, args=[name="input_forced_console", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.024][d][cplayer] Run command: enable-section, flags=64, args=[name="input_youtube_quality", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.024][d][cplayer] Run command: define-section, flags=64, args=[name="input_forced_youtube_quality", contents="", flags="force"]
+[   0.024][d][cplayer] Run command: enable-section, flags=64, args=[name="input_forced_youtube_quality", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.024][d][cplayer] Run command: define-section, flags=64, args=[name="input", contents="mbtn_left script-binding osc/__keybinding5\nshift+mbtn_left script-binding osc/__keybinding6\nmbtn_right script-binding osc/__keybinding7\nmbtn_mid script-binding osc/__keybinding8\nwheel_up script-binding osc/__keybinding9\nwheel_down script-binding osc/__keybinding10\nmbtn_left_dbl ignore\nshift+mbtn_left_dbl ignore\nmbtn_right_dbl ignore\n", flags="force"]
+[   0.024][d][cplayer] Run command: enable-section, flags=64, args=[name="input", flags=""]
+[   0.024][d][cplayer] Run command: define-section, flags=64, args=[name="window-controls", contents="mbtn_left script-binding osc/__keybinding11\n", flags="force"]
+[   0.024][d][cplayer] Run command: enable-section, flags=64, args=[name="window-controls", flags=""]
+[   0.024][d][cplayer] Run command: disable-section, flags=64, args=[name="input"]
+[   0.024][d][cplayer] Run command: disable-section, flags=64, args=[name="window-controls"]
+[   0.024][d][global] config path: 'fonts' -/-> '/home/apiz19/.config/mpv/fonts'
+[   0.024][d][global] config path: 'fonts' -/-> '/home/apiz19/.mpv/fonts'
+[   0.024][d][global] config path: 'fonts' -/-> '/etc/mpv/fonts'
+[   0.024][d][osd/libass] ASS library version: 0x1500000 (runtime 0x1500000)
+[   0.025][v][osd/libass] Shaper: FriBidi 1.0.10 (SIMPLE) HarfBuzz-ng 2.7.4 (COMPLEX)
+[   0.025][d][global] config path: 'subfont.ttf' -/-> '/home/apiz19/.config/mpv/subfont.ttf'
+[   0.025][d][global] config path: 'subfont.ttf' -/-> '/home/apiz19/.mpv/subfont.ttf'
+[   0.025][d][global] config path: 'subfont.ttf' -/-> '/etc/mpv/subfont.ttf'
+[   0.025][d][global] config path: 'fonts.conf' -/-> '/home/apiz19/.config/mpv/fonts.conf'
+[   0.025][d][global] config path: 'fonts.conf' -/-> '/home/apiz19/.mpv/fonts.conf'
+[   0.025][d][global] config path: 'fonts.conf' -/-> '/etc/mpv/fonts.conf'
+[   0.025][v][osd/libass] Setting up fonts...
+[   0.033][v][osd/libass] Using font provider fontconfig
+[   0.033][v][osd/libass] Done.
+[   0.033][d][cplayer] Run command: change-list, flags=64, args=[name="shared-script-properties", operation="append", value="osc-margins=0.000000,0.000000,0.000000,0.000000"]
+[   0.033][v][cplayer] Set property: shared-script-properties -> 1
+[   0.033][d][global] user path: '/tmp/mpvSockets/21357' -> '/tmp/mpvSockets/21357'
+[   0.034][v][cplayer] Set property: options/input-ipc-server="/tmp/mpvSockets/21357" -> 1
+[   0.034][v][ipc] Starting IPC master
+[   0.034][v][ipc] Listening to IPC socket.
+[   0.034][v][cplayer] Done loading scripts.
+[   0.034][d][global] config path: 'watch_later' -> '/home/apiz19/.config/mpv/watch_later'
+[   0.034][d][global] config path: 'watch?v=tnZ2xPu667w.conf' -/-> '/home/apiz19/.config/mpv/watch?v=tnZ2xPu667w.conf'
+[   0.034][d][global] config path: 'watch?v=tnZ2xPu667w.conf' -/-> '/home/apiz19/.mpv/watch?v=tnZ2xPu667w.conf'
+[   0.034][d][global] config path: 'watch?v=tnZ2xPu667w.conf' -/-> '/etc/mpv/watch?v=tnZ2xPu667w.conf'
+[   0.034][v][cplayer] Running hook: ytdl_hook/on_load
+[   0.034][v][ytdl_hook] ytdl:// hook 
+[   0.034][v][ytdl_hook] not a ytdl:// url 
+[   0.034][d][osc] osc_init 
+[   0.034][v][ffmpeg] Opening https://www.youtube.com/watch?v=tnZ2xPu667w
+[   0.035][d][cplayer] Run command: change-list, flags=64, args=[name="shared-script-properties", operation="append", value="osc-margins=0.000000,0.000000,0.000000,0.000000"]
+[   0.035][v][cplayer] Set property: shared-script-properties -> 1
+[   0.035][d][global] config path: 'fonts' -/-> '/home/apiz19/.config/mpv/fonts'
+[   0.035][d][global] config path: 'fonts' -/-> '/home/apiz19/.mpv/fonts'
+[   0.035][d][global] config path: 'fonts' -/-> '/etc/mpv/fonts'
+[   0.035][d][osd/libass] ASS library version: 0x1500000 (runtime 0x1500000)
+[   0.035][v][osd/libass] Shaper: FriBidi 1.0.10 (SIMPLE) HarfBuzz-ng 2.7.4 (COMPLEX)
+[   0.035][d][global] config path: 'subfont.ttf' -/-> '/home/apiz19/.config/mpv/subfont.ttf'
+[   0.035][d][global] config path: 'subfont.ttf' -/-> '/home/apiz19/.mpv/subfont.ttf'
+[   0.035][d][global] config path: 'subfont.ttf' -/-> '/etc/mpv/subfont.ttf'
+[   0.035][d][global] config path: 'fonts.conf' -/-> '/home/apiz19/.config/mpv/fonts.conf'
+[   0.035][d][global] config path: 'fonts.conf' -/-> '/home/apiz19/.mpv/fonts.conf'
+[   0.035][d][global] config path: 'fonts.conf' -/-> '/etc/mpv/fonts.conf'
+[   0.035][v][osd/libass] Setting up fonts...
+[   0.043][v][osd/libass] Using font provider fontconfig
+[   0.043][v][osd/libass] Done.
+[   0.044][d][cplayer] Run command: define-section, flags=64, args=[name="input_osc", contents="", flags="default"]
+[   0.044][d][cplayer] Run command: enable-section, flags=64, args=[name="input_osc", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.044][d][cplayer] Run command: define-section, flags=64, args=[name="input_forced_osc", contents="", flags="force"]
+[   0.044][d][cplayer] Run command: enable-section, flags=64, args=[name="input_forced_osc", flags="allow-hide-cursor+allow-vo-dragging"]
+[   0.056][d][ffmpeg] tcp: Starting connection attempt to 172.217.194.91 port 443
+[   0.074][d][osc] osc_init 
+[   0.074][d][cplayer] Run command: change-list, flags=64, args=[name="shared-script-properties", operation="append", value="osc-margins=0.000000,0.000000,0.000000,0.000000"]
+[   0.074][v][cplayer] Set property: shared-script-properties -> 1
+[   0.099][d][ffmpeg] tcp: Successfully connected to 172.217.194.91 port 443
+[   0.294][d][ffmpeg] resize stream to 131072 bytes, drop 0 bytes
+[   0.294][v][ffmpeg] Mime-type: 'text/html; charset=utf-8'
+[   0.294][d][ffmpeg] Stream opened successfully.
+[   0.294][v][demux] Trying demuxers for level=normal.
+[   0.294][d][demux] Trying demuxer: disc (force-level: normal)
+[   0.294][d][demux] Trying demuxer: edl (force-level: normal)
+[   0.294][d][demux] Trying demuxer: cue (force-level: normal)
+[   0.294][d][demux] Trying demuxer: rawaudio (force-level: normal)
+[   0.294][d][demux] Trying demuxer: rawvideo (force-level: normal)
+[   0.294][d][demux] Trying demuxer: mkv (force-level: normal)
+[   0.294][d][demux] Trying demuxer: libarchive (force-level: normal)
+[   0.295][d][demux] Trying demuxer: lavf (force-level: normal)
+[   0.437][d][ffmpeg] resize stream to 262144 bytes, drop 0 bytes
+[   0.698][d][ffmpeg] resize stream to 524288 bytes, drop 0 bytes
+[   1.179][d][ffmpeg] resize stream to 1048576 bytes, drop 0 bytes
+[   1.196][v][lavf] No format found, try lowering probescore or forcing the format.
+[   1.196][d][demux] Trying demuxer: mf (force-level: normal)
+[   1.196][d][demux] Trying demuxer: playlist (force-level: normal)
+[   1.196][d][demux] Trying demuxer: null (force-level: normal)
+[   1.196][v][demux] Trying demuxers for level=unsafe.
+[   1.196][d][demux] Trying demuxer: disc (force-level: unsafe)
+[   1.196][d][demux] Trying demuxer: edl (force-level: unsafe)
+[   1.196][d][demux] Trying demuxer: cue (force-level: unsafe)
+[   1.196][d][demux] Trying demuxer: rawaudio (force-level: unsafe)
+[   1.196][d][demux] Trying demuxer: rawvideo (force-level: unsafe)
+[   1.196][d][demux] Trying demuxer: mkv (force-level: unsafe)
+[   1.196][d][demux] Trying demuxer: libarchive (force-level: unsafe)
+[   1.197][d][demux] Trying demuxer: lavf (force-level: unsafe)
+[   1.220][d][ffmpeg] resize stream to 524288 bytes, drop 0 bytes
+[   1.236][d][ffmpeg] resize stream to 1048576 bytes, drop 0 bytes
+[   1.253][v][lavf] No format found, try lowering probescore or forcing the format.
+[   1.253][d][demux] Trying demuxer: mf (force-level: unsafe)
+[   1.253][d][demux] Trying demuxer: playlist (force-level: unsafe)
+[   1.253][d][demux] Trying demuxer: null (force-level: unsafe)
+[   1.253][d][ffmpeg] AVIOContext: Statistics: 442226 bytes read, 0 seeks
+[   1.253][v][cplayer] Opening failed or was aborted: https://www.youtube.com/watch?v=tnZ2xPu667w
+[   1.253][v][cplayer] Running hook: ytdl_hook/on_load_fail
+[   1.253][v][ytdl_hook] full hook 
+[   1.253][d][global] config path: 'youtube-dl' -/-> '/home/apiz19/.config/mpv/youtube-dl'
+[   1.253][d][global] config path: 'youtube-dl' -/-> '/home/apiz19/.mpv/youtube-dl'
+[   1.253][d][global] config path: 'youtube-dl' -/-> '/etc/mpv/youtube-dl'
+[   1.253][v][ytdl_hook] No youtube-dl found with path youtube-dl in config directories 
+[   1.253][d][ytdl_hook] Running: youtube-dl --no-warnings -J --flat-playlist --sub-format ass/srt/best --format bestvideo[height<=?720][fps<=?30][vcodec!=?vp9][protocol!=http_dash_segments]+bestaudio/best --all-subs --no-playlist -- https://www.youtube.com/watch?v=tnZ2xPu667w 
+[   1.253][d][cplayer] Run command: subprocess, flags=64, args=[args="youtube-dl,--no-warnings,-J,--flat-playlist,--sub-format,ass/srt/best,--format,bestvideo[height<=?720][fps<=?30][vcodec!=?vp9][protocol!=http_dash_segments]+bestaudio/best,--all-subs,--no-playlist,--,https://www.youtube.com/watch?v=tnZ2xPu667w", playback_only="yes", capture_size="67108864", capture_stdout="yes", capture_stderr="yes", detach="no", env="", stdin_data="", passthrough_stdin="no"]
+[   2.609][v][ytdl_hook] youtube-dl succeeded! 
+[   2.609][d][ytdl_hook] ytdl parsing took 0.004584 seconds 
+[   2.609][d][ytdl_hook] No fragments to join into EDL 
+[   2.609][d][ytdl_hook] No fragments to join into EDL 
+[   2.609][v][ytdl_hook] format selection: youtube-dl (separate) 
+[   2.609][d][ytdl_hook] streamurl: edl://!new_stream;!no_clip;!no_chapters;%971%https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=136&aitags=133%2C134%2C135%2C136%2C160%2C242%2C243%2C244%2C247%2C278%2C298%2C299%2C302%2C303&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=video%2Fmp4&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=67805451&dur=493.126&lmt=1614248720012466&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6316222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAIM5-PVM7JV8YrK08AjZ-iL9YjW71AiehbDLvkqSOOenAiEArokMRuU5NqlWM7n-FKxcRd7dnk2DaVoRo2He7Zlc290%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op;!new_stream;!no_clip;!no_chapters;%882%https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=251&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=audio%2Fwebm&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=8351297&dur=493.181&lmt=1614248713896016&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6311222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAKm8SHTr1V994BYRs6co1UNNzizWmJYqhrz9gjFj1KmFAiAyMWcmuERdyXKs4IWXgSPnJNobSt-NjAUvDtkP9NFgUw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op 
+[   2.609][v][cplayer] Set property: stream-open-filename="edl://!new_stream;!no_clip;!no_chapters;%971%https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=136&aitags=133%2C134%2C135%2C136%2C160%2C242%2C243%2C244%2C247%2C278%2C298%2C299%2C302%2C303&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=video%2Fmp4&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=67805451&dur=493.126&lmt=1614248720012466&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6316222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAIM5-PVM7JV8YrK08AjZ-iL9YjW71AiehbDLvkqSOOenAiEArokMRuU5NqlWM7n-FKxcRd7dnk2DaVoRo2He7Zlc290%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op;!new_stream;!no_clip;!no_chapters;%882%https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=251&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=audio%2Fwebm&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=8351297&dur=493.181&lmt=1614248713896016&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6311222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAKm8SHTr1V994BYRs6co1UNNzizWmJYqhrz9gjFj1KmFAiAyMWcmuERdyXKs4IWXgSPnJNobSt-NjAUvDtkP9NFgUw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op" -> 1
+[   2.609][v][cplayer] Set property: file-local-options/force-media-title="Outdoor Skills Eps 03 | Peralatan Olahraga Arus Deras" -> 1
+[   2.609][v][cplayer] Set property: file-local-options/stream-lavf-o={} -> 1
+[   2.609][d][ytdl_hook] script running time: 0.005305 seconds 
+[   2.609][v][edl] Opening edl://!new_stream;!no_clip;!no_chapters;%971%https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=136&aitags=133%2C134%2C135%2C136%2C160%2C242%2C243%2C244%2C247%2C278%2C298%2C299%2C302%2C303&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=video%2Fmp4&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=67805451&dur=493.126&lmt=1614248720012466&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6316222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAIM5-PVM7JV8YrK08AjZ-iL9YjW71AiehbDLvkqSOOenAiEArokMRuU5NqlWM7n-FKxcRd7dnk2DaVoRo2He7Zlc290%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op;!new_stream;!no_clip;!no_chapters;%882%https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=251&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=audio%2Fwebm&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=8351297&dur=493.181&lmt=1614248713896016&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6311222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAKm8SHTr1V994BYRs6co1UNNzizWmJYqhrz9gjFj1KmFAiAyMWcmuERdyXKs4IWXgSPnJNobSt-NjAUvDtkP9NFgUw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op
+[   2.609][d][edl] resize stream to 131072 bytes, drop 0 bytes
+[   2.609][d][edl] Stream opened successfully.
+[   2.609][v][demux] Trying demuxers for level=request.
+[   2.609][d][demux] Trying demuxer: edl (force-level: request)
+[   2.609][v][demux] Detected file format: Edit decision list
+[   2.609][v][demux] Stream is not seekable.
+[   2.610][w][demux] Not seekable, but enabling seeking on user request.
+[   2.610][v][demux] Opening segment 0...
+[   2.610][v][ffmpeg] Opening https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=136&aitags=133%2C134%2C135%2C136%2C160%2C242%2C243%2C244%2C247%2C278%2C298%2C299%2C302%2C303&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=video%2Fmp4&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=67805451&dur=493.126&lmt=1614248720012466&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6316222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAIM5-PVM7JV8YrK08AjZ-iL9YjW71AiehbDLvkqSOOenAiEArokMRuU5NqlWM7n-FKxcRd7dnk2DaVoRo2He7Zlc290%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op
+[   2.667][d][ffmpeg] tcp: Starting connection attempt to 36.92.237.81 port 443
+[   2.681][d][ffmpeg] tcp: Successfully connected to 36.92.237.81 port 443
+[   2.793][d][ffmpeg] tcp: Starting connection attempt to 74.125.164.134 port 443
+[   2.818][d][ffmpeg] tcp: Successfully connected to 74.125.164.134 port 443
+[   2.920][d][ffmpeg] tcp: Starting connection attempt to 74.125.164.134 port 443
+[   2.946][d][ffmpeg] tcp: Successfully connected to 74.125.164.134 port 443
+[   3.106][d][ffmpeg] resize stream to 131072 bytes, drop 0 bytes
+[   3.106][v][ffmpeg] Mime-type: 'video/mp4'
+[   3.106][d][ffmpeg] Stream opened successfully.
+[   3.106][v][demux] Trying demuxers for level=normal.
+[   3.106][d][demux] Trying demuxer: disc (force-level: normal)
+[   3.106][d][demux] Trying demuxer: edl (force-level: normal)
+[   3.108][d][demux] Trying demuxer: cue (force-level: normal)
+[   3.108][d][demux] Trying demuxer: rawaudio (force-level: normal)
+[   3.108][d][demux] Trying demuxer: rawvideo (force-level: normal)
+[   3.108][d][demux] Trying demuxer: mkv (force-level: normal)
+[   3.108][d][demux] Trying demuxer: libarchive (force-level: normal)
+[   3.109][d][demux] Trying demuxer: lavf (force-level: normal)
+[   3.114][v][lavf] Found 'mov,mp4,m4a,3gp,3g2,mj2' at score=100 size=2048.
+[   3.114][v][demux] Detected file format: mov,mp4,m4a,3gp,3g2,mj2 (libavformat)
+[   3.114][v][demux] Opening segment 0...
+[   3.114][v][ffmpeg] Opening https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=251&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=audio%2Fwebm&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=8351297&dur=493.181&lmt=1614248713896016&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6311222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAKm8SHTr1V994BYRs6co1UNNzizWmJYqhrz9gjFj1KmFAiAyMWcmuERdyXKs4IWXgSPnJNobSt-NjAUvDtkP9NFgUw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op
+[   3.130][d][ffmpeg] tcp: Starting connection attempt to 36.92.237.81 port 443
+[   3.144][d][ffmpeg] tcp: Successfully connected to 36.92.237.81 port 443
+[   3.225][d][ffmpeg] resize stream to 131072 bytes, drop 0 bytes
+[   3.225][v][ffmpeg] Mime-type: 'audio/webm'
+[   3.225][d][ffmpeg] Stream opened successfully.
+[   3.225][v][demux] Trying demuxers for level=normal.
+[   3.225][d][demux] Trying demuxer: disc (force-level: normal)
+[   3.225][d][demux] Trying demuxer: edl (force-level: normal)
+[   3.229][d][demux] Trying demuxer: cue (force-level: normal)
+[   3.229][d][demux] Trying demuxer: rawaudio (force-level: normal)
+[   3.229][d][demux] Trying demuxer: rawvideo (force-level: normal)
+[   3.229][d][demux] Trying demuxer: mkv (force-level: normal)
+[   3.229][d][mkv] Found the head...
+[   3.229][d][mkv] + a segment...
+[   3.229][d][mkv] Parsing seek head...
+[   3.229][d][mkv] |+ segment information...
+[   3.229][d][mkv] float 493181.000000
+[   3.229][d][mkv] | + muxing app: google/video-file
+[   3.229][d][mkv] | + writing app: google/video-file
+[   3.229][d][mkv] | + timecode scale: 1000000
+[   3.229][d][mkv] | + duration: 493.181s
+[   3.229][d][mkv] |+ segment tracks...
+[   3.229][d][mkv] float 48000.000000
+[   3.229][d][mkv] | + a track...
+[   3.229][d][mkv] |  + Track number: 1
+[   3.229][d][mkv] |  + Track type: Audio
+[   3.229][d][mkv] |  + Audio track
+[   3.229][d][mkv] |   + Sampling frequency: 48000.000000
+[   3.229][d][mkv] |   + Bit depth: 32
+[   3.229][d][mkv] |   + Channels: 2
+[   3.229][d][mkv] |  + Codec ID: A_OPUS
+[   3.229][d][mkv] |  + CodecPrivate, length 19
+[   3.229][d][mkv] |  + Language: eng
+[   3.229][v][mkv] Parsing cues...
+[   3.229][d][mkv] |+ found cluster
+[   3.229][v][mkv] All headers are parsed!
+[   3.229][v][demux] Detected file format: Matroska
+[   3.229][d][demux] Trying demuxer: timeline (force-level: force)
+[   3.229][v][timeline] Timeline segments:
+[   3.229][v][timeline]   0:     0.000000 -   493.126460 [    0.000000] (0)
+[   3.229][v][timeline]   source 0:'https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=136&aitags=133%2C134%2C135%2C136%2C160%2C242%2C243%2C244%2C247%2C278%2C298%2C299%2C302%2C303&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=video%2Fmp4&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=67805451&dur=493.126&lmt=1614248720012466&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6316222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAIM5-PVM7JV8YrK08AjZ-iL9YjW71AiehbDLvkqSOOenAiEArokMRuU5NqlWM7n-FKxcRd7dnk2DaVoRo2He7Zlc290%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op'
+[   3.229][v][timeline]  --- new parallel stream ---
+[   3.229][v][timeline]   0:     0.000000 -   493.181000 [    0.000000] (1)
+[   3.229][v][timeline]   source 0:'https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=251&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=audio%2Fwebm&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=8351297&dur=493.181&lmt=1614248713896016&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6311222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAKm8SHTr1V994BYRs6co1UNNzizWmJYqhrz9gjFj1KmFAiAyMWcmuERdyXKs4IWXgSPnJNobSt-NjAUvDtkP9NFgUw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op'
+[   3.229][v][timeline] Total duration: 493.181000
+[   3.229][v][demux] Detected file format: multi/mov,mp4,m4a,3gp,3g2,mj2 (timeline segments)
+[   3.229][v][cplayer] Opening done: edl://!new_stream;!no_clip;!no_chapters;%971%https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=136&aitags=133%2C134%2C135%2C136%2C160%2C242%2C243%2C244%2C247%2C278%2C298%2C299%2C302%2C303&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=video%2Fmp4&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=67805451&dur=493.126&lmt=1614248720012466&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6316222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAIM5-PVM7JV8YrK08AjZ-iL9YjW71AiehbDLvkqSOOenAiEArokMRuU5NqlWM7n-FKxcRd7dnk2DaVoRo2He7Zlc290%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op;!new_stream;!no_clip;!no_chapters;%882%https://r6---sn-2uuxa3vh-3ovs.googlevideo.com/videoplayback?expire=1615113833&ei=CVpEYLu7JMS93LUP8aqU0As&ip=36.68.154.29&id=o-AFZ-sqUn1FJ9WdYM-XSJkAznBW_tbV5au_OzjLwCscfL&itag=251&source=youtube&requiressl=yes&mh=Lc&mm=31%2C29&mn=sn-2uuxa3vh-3ovs%2Csn-npoeenle&ms=au%2Crdu&mv=m&mvi=6&pl=22&initcwndbps=482500&vprv=1&mime=audio%2Fwebm&ns=SrZ03nUYYXa2TGx3yTvtxQEF&gir=yes&clen=8351297&dur=493.181&lmt=1614248713896016&mt=1615091793&fvip=1&keepalive=yes&fexp=24007246&c=WEB&txp=6311222&n=2ZHp1hsTbUMbfsAHBV&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAKm8SHTr1V994BYRs6co1UNNzizWmJYqhrz9gjFj1KmFAiAyMWcmuERdyXKs4IWXgSPnJNobSt-NjAUvDtkP9NFgUw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgROdDpWvOH3x4kUXAhHRtQVE9Wqht0I9kasbGU_SL3KACIC_hxwcaoE7KWvG40SXOUScMVF8hVaaUEMyuqLDr_0op
+[   3.231][d][global] user path: 'ass' -> 'ass'
+[   3.231][d][global] user path: 'srt' -> 'srt'
+[   3.231][d][global] user path: 'sub' -> 'sub'
+[   3.231][d][global] user path: 'subs' -> 'subs'
+[   3.231][d][global] user path: 'subtitles' -> 'subtitles'
+[   3.231][d][global] config path: 'sub' -/-> '/home/apiz19/.config/mpv/sub'
+[   3.231][d][global] config path: 'sub' -/-> '/home/apiz19/.mpv/sub'
+[   3.231][d][global] config path: 'sub' -/-> '/etc/mpv/sub'
+[   3.231][d][global] config path: 'audio' -/-> '/home/apiz19/.config/mpv/audio'
+[   3.231][d][global] config path: 'audio' -/-> '/home/apiz19/.mpv/audio'
+[   3.231][d][global] config path: 'audio' -/-> '/etc/mpv/audio'
+[   3.231][v][cplayer] Running hook: ytdl_hook/on_preloaded
+[   3.231][d][osc] osc_init 
+[   3.232][v][timeline] select track 0
+[   3.232][v][timeline] select track 1
+[   3.232][i][cplayer]  (+) Video --vid=1 (*) (h264 1280x720 29.970fps)
+[   3.232][i][cplayer]  (+) Audio --aid=1 --alang=eng (*) (opus 2ch 48000Hz)
+[   3.232][v][vo/gpu] Probing for best GPU context.
+[   3.232][v][vo/gpu/opengl] Initializing GPU context 'wayland'
+[   3.232][v][vo/gpu/opengl] Initializing GPU context 'x11egl'
+[   3.232][v][vo/gpu/x11] X11 opening display: :0
+[   3.234][d][vo/gpu/x11] X11 running at 1366x768 (":0" => local display)
+[   3.234][d][vo/gpu/x11] Detected wm supports NetWM.
+[   3.234][d][vo/gpu/x11] Detected wm supports FULLSCREEN state.
+[   3.235][v][vo/gpu/x11] Display 0 (eDP1): [0, 0, 1366, 768] @ 60.003141 FPS
+[   3.235][v][vo/gpu/x11] Current display FPS: 60.003141
+[   3.324][v][vo/gpu/opengl] EGL_VERSION=1.5
+[   3.324][v][vo/gpu/opengl] EGL_VENDOR=Mesa Project
+[   3.324][v][vo/gpu/opengl] EGL_CLIENT_APIS=OpenGL OpenGL_ES 
+[   3.324][v][vo/gpu/opengl] Trying to create Desktop OpenGL context.
+[   3.325][d][vo/gpu/opengl] Chosen EGLConfig:
+[   3.325][d][vo/gpu/opengl]   EGL_CONFIG_ID=0x11
+[   3.325][d][vo/gpu/opengl]   EGL_RED_SIZE=0x8
+[   3.325][d][vo/gpu/opengl]   EGL_GREEN_SIZE=0x8
+[   3.325][d][vo/gpu/opengl]   EGL_BLUE_SIZE=0x8
+[   3.325][d][vo/gpu/opengl]   EGL_ALPHA_SIZE=0x0
+[   3.325][d][vo/gpu/opengl]   EGL_COLOR_BUFFER_TYPE=0x308e
+[   3.325][d][vo/gpu/opengl]   EGL_CONFIG_CAVEAT=0x3038
+[   3.325][d][vo/gpu/opengl]   EGL_CONFORMANT=0x4d
+[   3.325][d][vo/gpu/opengl]   EGL_NATIVE_VISUAL_ID=0x20
+[   3.326][v][vo/gpu/opengl] Choosing visual EGL config 0x11, visual ID 0x20
+[   3.330][v][vo/gpu/opengl] GL_VERSION='4.6 (Core Profile) Mesa 20.3.4'
+[   3.330][v][vo/gpu/opengl] Detected desktop OpenGL 4.6.
+[   3.330][v][vo/gpu/opengl] GL_VENDOR='Intel'
+[   3.330][v][vo/gpu/opengl] GL_RENDERER='Mesa Intel(R) HD Graphics 5500 (BDW GT2)'
+[   3.330][v][vo/gpu/opengl] GL_SHADING_LANGUAGE_VERSION='4.60'
+[   3.330][d][vo/gpu/opengl] Combined OpenGL extensions string:
+[   3.330][d][vo/gpu/opengl] EGL_ANDROID_blob_cache EGL_ANDROID_native_fence_sync EGL_CHROMIUM_sync_control EGL_EXT_buffer_age EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_swap_buffers_with_damage EGL_IMG_context_priority EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_KHR_swap_buffers_with_damage EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_drm_image EGL_MESA_image_dma_buf_export EGL_MESA_query_driver EGL_NOK_texture_from_pixmap EGL_WL_bind_wayland_display  GL_3DFX_texture_compression_FXT1 GL_AMD_conservative_depth GL_AMD_draw_buffers_blend GL_AMD_gpu_shader_int64 GL_AMD_multi_draw_indirect GL_AMD_performance_monitor GL_AMD_pinned_memory GL_AMD_query_buffer_object GL_AMD_seamless_cubemap_per_texture GL_AMD_shader_trinary_minmax GL_AMD_texture_texture4 GL_AMD_vertex_shader_layer GL_AMD_vertex_shader_viewport_index GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ARB_ES2_compatibility GL_ARB_ES3_1_compatibility GL_ARB_ES3_2_compatibility GL_ARB_ES3_compatibility GL_ARB_arrays_of_arrays GL_ARB_base_instance GL_ARB_blend_func_extended GL_ARB_buffer_storage GL_ARB_clear_buffer_object GL_ARB_clear_texture GL_ARB_clip_control GL_ARB_compressed_texture_pixel_storage GL_ARB_compute_shader GL_ARB_compute_variable_group_size GL_ARB_conditional_render_inverted GL_ARB_conservative_depth GL_ARB_copy_buffer GL_ARB_copy_image GL_ARB_cull_distance GL_ARB_debug_output GL_ARB_depth_buffer_float GL_ARB_depth_clamp GL_ARB_derivative_control GL_ARB_direct_state_access GL_ARB_draw_buffers GL_ARB_draw_buffers_blend GL_ARB_draw_elements_base_vertex GL_ARB_draw_indirect GL_ARB_draw_instanced GL_ARB_enhanced_layouts GL_ARB_explicit_attrib_location GL_ARB_explicit_uniform_location GL_ARB_fragment_coord_conventions GL_ARB_fragment_layer_viewport GL_ARB_fragment_shader GL_ARB_framebuffer_no_attachments GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_get_program_binary GL_ARB_get_texture_sub_image GL_ARB_gl_spirv GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_ARB_gpu_shader_int64 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_indirect_parameters GL_ARB_instanced_arrays GL_ARB_internalformat_query GL_ARB_internalformat_query2 GL_ARB_invalidate_subdata GL_ARB_map_buffer_alignment GL_ARB_map_buffer_range GL_ARB_multi_bind GL_ARB_multi_draw_indirect GL_ARB_occlusion_query2 GL_ARB_parallel_shader_compile GL_ARB_pipeline_statistics_query GL_ARB_pixel_buffer_object GL_ARB_point_sprite GL_ARB_polygon_offset_clamp GL_ARB_program_interface_query GL_ARB_provoking_vertex GL_ARB_query_buffer_object GL_ARB_robust_buffer_access_behavior GL_ARB_robustness GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_seamless_cubemap_per_texture GL_ARB_separate_shader_objects GL_ARB_shader_atomic_counter_ops GL_ARB_shader_atomic_counters GL_ARB_shader_ballot GL_ARB_shader_bit_encoding GL_ARB_shader_clock GL_ARB_shader_draw_parameters GL_ARB_shader_group_vote GL_ARB_shader_image_load_store GL_ARB_shader_image_size GL_ARB_shader_objects GL_ARB_shader_precision GL_ARB_shader_storage_buffer_object GL_ARB_shader_subroutine GL_ARB_shader_texture_image_samples GL_ARB_shader_texture_lod GL_ARB_shader_viewport_layer_array GL_ARB_shading_language_420pack GL_ARB_shading_language_include GL_ARB_shading_language_packing GL_ARB_spirv_extensions GL_ARB_stencil_texturing GL_ARB_sync GL_ARB_tessellation_shader GL_ARB_texture_barrier GL_ARB_texture_buffer_object GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_buffer_range GL_ARB_texture_compression_bptc GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map_array GL_ARB_texture_filter_anisotropic GL_ARB_texture_float GL_ARB_texture_gather GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_multisample GL_ARB_texture_non_power_of_two GL_ARB_texture_query_levels GL_ARB_texture_query_lod GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_texture_rgb10_a2ui GL_ARB_texture_stencil8 GL_ARB_texture_storage GL_ARB_texture_storage_multisample GL_ARB_texture_swizzle GL_ARB_texture_view GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_transform_feedback_instanced GL_ARB_transform_feedback_overflow_query GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ARB_vertex_array_object GL_ARB_vertex_attrib_64bit GL_ARB_vertex_attrib_binding GL_ARB_vertex_buffer_object GL_ARB_vertex_shader GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_vertex_type_2_10_10_10_rev GL_ARB_viewport_array GL_ATI_blend_equation_separate GL_ATI_texture_float GL_EXT_EGL_image_storage GL_EXT_EGL_sync GL_EXT_abgr GL_EXT_blend_equation_separate GL_EXT_demote_to_helper_invocation GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_pixel_buffer_object GL_EXT_polygon_offset_clamp GL_EXT_provoking_vertex GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_shader_framebuffer_fetch_non_coherent GL_EXT_shader_integer_mix GL_EXT_shader_samples_identical GL_EXT_texture_array GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_sRGB GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_decode GL_EXT_texture_shadow_lod GL_EXT_texture_shared_exponent GL_EXT_texture_snorm GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback GL_EXT_vertex_array_bgra GL_EXT_vertex_attrib_64bit GL_IBM_multimode_draw_arrays GL_INTEL_blackhole_render GL_INTEL_performance_query GL_INTEL_shader_integer_functions2 GL_KHR_blend_equation_advanced GL_KHR_context_flush_control GL_KHR_debug GL_KHR_no_error GL_KHR_parallel_shader_compile GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_sliced_3d GL_MESA_framebuffer_flip_y GL_MESA_pack_invert GL_MESA_shader_integer_functions GL_MESA_texture_signed_rgba GL_NV_compute_shader_derivatives GL_NV_conditional_render GL_NV_copy_image GL_NV_depth_clamp GL_NV_packed_depth_stencil GL_NV_texture_barrier GL_OES_EGL_image GL_S3_s3tc
+[   3.331][d][vo/gpu/opengl] Texture formats:
+[   3.331][d][vo/gpu/opengl]   NAME       COMP*TYPE SIZE           DEPTH PER COMP.
+[   3.331][d][vo/gpu/opengl]   r8         1*unorm   1B    LF CR ST {8}
+[   3.331][d][vo/gpu/opengl]   rg8        2*unorm   2B    LF CR ST {8 8}
+[   3.331][d][vo/gpu/opengl]   rgb8       3*unorm   3B    LF CR ST {8 8 8}
+[   3.331][d][vo/gpu/opengl]   rgba8      4*unorm   4B    LF CR ST {8 8 8 8}
+[   3.331][d][vo/gpu/opengl]   r16        1*unorm   2B    LF CR ST {16}
+[   3.331][d][vo/gpu/opengl]   rg16       2*unorm   4B    LF CR ST {16 16}
+[   3.331][d][vo/gpu/opengl]   rgb16      3*unorm   6B    LF CR ST {16 16 16}
+[   3.331][d][vo/gpu/opengl]   rgba16     4*unorm   8B    LF CR ST {16 16 16 16}
+[   3.331][d][vo/gpu/opengl]   r8ui       1*uint    1B       CR ST {8}
+[   3.331][d][vo/gpu/opengl]   rg8ui      2*uint    2B       CR ST {8 8}
+[   3.331][d][vo/gpu/opengl]   rgb8ui     3*uint    3B          ST {8 8 8}
+[   3.331][d][vo/gpu/opengl]   rgba8ui    4*uint    4B       CR ST {8 8 8 8}
+[   3.331][d][vo/gpu/opengl]   r16ui      1*uint    2B       CR ST {16}
+[   3.331][d][vo/gpu/opengl]   rg16ui     2*uint    4B       CR ST {16 16}
+[   3.331][d][vo/gpu/opengl]   rgb16ui    3*uint    6B          ST {16 16 16}
+[   3.331][d][vo/gpu/opengl]   rgba16ui   4*uint    8B       CR ST {16 16 16 16}
+[   3.331][d][vo/gpu/opengl]   r16f       1*float   4B    LF CR ST {32/16}
+[   3.331][d][vo/gpu/opengl]   rg16f      2*float   8B    LF CR ST {32/16 32/16}
+[   3.331][d][vo/gpu/opengl]   rgb16f     3*float  12B    LF CR ST {32/16 32/16 32/16}
+[   3.331][d][vo/gpu/opengl]   rgba16f    4*float  16B    LF CR ST {32/16 32/16 32/16 32/16}
+[   3.331][d][vo/gpu/opengl]   r32f       1*float   4B    LF CR ST {32}
+[   3.331][d][vo/gpu/opengl]   rg32f      2*float   8B    LF CR ST {32 32}
+[   3.331][d][vo/gpu/opengl]   rgb32f     3*float  12B    LF CR ST {32 32 32}
+[   3.331][d][vo/gpu/opengl]   rgba32f    4*float  16B    LF CR ST {32 32 32 32}
+[   3.331][d][vo/gpu/opengl]   rgb10_a2   4*unorm   4B    LF CR ST {0/10 0/10 0/10 0/2}
+[   3.331][d][vo/gpu/opengl]   rgba12     4*unorm   8B    LF CR ST {16 16 16 16}
+[   3.331][d][vo/gpu/opengl]   rgb10      3*unorm   6B    LF CR ST {16/10 16/10 16/10}
+[   3.331][d][vo/gpu/opengl]   rgb565     3*unorm   2B    LF    ST {0/8 0/8 0/8}
+[   3.331][d][vo/gpu/opengl]  LA = LUMINANCE_ALPHA hack format
+[   3.331][d][vo/gpu/opengl]  LF = linear filterable
+[   3.331][d][vo/gpu/opengl]  CR = can be used for render targets
+[   3.331][d][vo/gpu/opengl]  ST = can be used for storable images
+[   3.331][d][vo/gpu/opengl] Image formats:
+[   3.331][d][vo/gpu/opengl]   yuv444p => 3 planes 1x1 8/0 [r8/r8/r8] (r/g/b) [unorm]
+[   3.331][d][vo/gpu/opengl]   yuv420p => 3 planes 2x2 8/0 [r8/r8/r8] (r/g/b) [unorm]
+[   3.331][d][vo/gpu/opengl]   gray => 1 planes 1x1 8/0 [r8] (r) [unorm]
+[   3.331][d][vo/gpu/opengl]   gray16 => 1 planes 1x1 16/0 [r16] (r) [unorm]
+[   3.331][d][vo/gpu/opengl]   uyvy422
+[   3.331][d][vo/gpu/opengl]   nv12 => 2 planes 2x2 8/0 [r8/rg8] (r/gb) [unorm]
+[   3.331][d][vo/gpu/opengl]   p010 => 2 planes 2x2 16/6 [r16/rg16] (r/gb) [unorm]
+[   3.331][d][vo/gpu/opengl]   argb => 1 planes 1x1 8/0 [rgba8] (argb) [unorm]
+[   3.331][d][vo/gpu/opengl]   bgra => 1 planes 1x1 8/0 [rgba8] (bgra) [unorm]
+[   3.332][d][vo/gpu/opengl]   abgr => 1 planes 1x1 8/0 [rgba8] (abgr) [unorm]
+[   3.332][d][vo/gpu/opengl]   rgba => 1 planes 1x1 8/0 [rgba8] (rgba) [unorm]
+[   3.332][d][vo/gpu/opengl]   bgr24 => 1 planes 1x1 8/0 [rgb8] (bgr) [unorm]
+[   3.332][d][vo/gpu/opengl]   rgb24 => 1 planes 1x1 8/0 [rgb8] (rgb) [unorm]
+[   3.332][d][vo/gpu/opengl]   0rgb => 1 planes 1x1 8/0 [rgba8] (_rgb) [unorm]
+[   3.332][d][vo/gpu/opengl]   bgr0 => 1 planes 1x1 8/0 [rgba8] (bgr) [unorm]
+[   3.332][d][vo/gpu/opengl]   0bgr => 1 planes 1x1 8/0 [rgba8] (_bgr) [unorm]
+[   3.332][d][vo/gpu/opengl]   rgb0 => 1 planes 1x1 8/0 [rgba8] (rgb) [unorm]
+[   3.332][d][vo/gpu/opengl]   rgba64 => 1 planes 1x1 16/0 [rgba16] (rgba) [unorm]
+[   3.332][d][vo/gpu/opengl]   rgb565 => 1 planes 1x1 0/0 [rgb565] (rgb) [unknown]
+[   3.332][d][vo/gpu/opengl]   pal8
+[   3.332][d][vo/gpu/opengl]   vdpau
+[   3.332][d][vo/gpu/opengl]   d3d11
+[   3.332][d][vo/gpu/opengl]   dxva2_vld
+[   3.332][d][vo/gpu/opengl]   mmal
+[   3.332][d][vo/gpu/opengl]   mediacodec
+[   3.332][d][vo/gpu/opengl]   drm_prime
+[   3.332][d][vo/gpu/opengl]   cuda
+[   3.332][d][vo/gpu/opengl]   yap8 => 2 planes 1x1 8/0 [r8/r8] (r/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yap16 => 2 planes 1x1 16/0 [r16/r16] (r/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   grayaf32 => 2 planes 1x1 32/0 [r16f/r16f] (r/a) [float]
+[   3.332][d][vo/gpu/opengl]   yuv444pf => 3 planes 1x1 32/0 [r16f/r16f/r16f] (r/g/b) [float]
+[   3.332][d][vo/gpu/opengl]   yuva444pf => 4 planes 1x1 32/0 [r16f/r16f/r16f/r16f] (r/g/b/a) [float]
+[   3.332][d][vo/gpu/opengl]   yuv420pf => 3 planes 2x2 32/0 [r16f/r16f/r16f] (r/g/b) [float]
+[   3.332][d][vo/gpu/opengl]   yuva420pf => 4 planes 2x2 32/0 [r16f/r16f/r16f/r16f] (r/g/b/a) [float]
+[   3.332][d][vo/gpu/opengl]   yuv422pf => 3 planes 2x1 32/0 [r16f/r16f/r16f] (r/g/b) [float]
+[   3.332][d][vo/gpu/opengl]   yuva422pf => 4 planes 2x1 32/0 [r16f/r16f/r16f/r16f] (r/g/b/a) [float]
+[   3.332][d][vo/gpu/opengl]   yuv440pf => 3 planes 1x2 32/0 [r16f/r16f/r16f] (r/g/b) [float]
+[   3.332][d][vo/gpu/opengl]   yuva440pf => 4 planes 1x2 32/0 [r16f/r16f/r16f/r16f] (r/g/b/a) [float]
+[   3.332][d][vo/gpu/opengl]   yuv410pf => 3 planes 4x4 32/0 [r16f/r16f/r16f] (r/g/b) [float]
+[   3.332][d][vo/gpu/opengl]   yuva410pf => 4 planes 4x4 32/0 [r16f/r16f/r16f/r16f] (r/g/b/a) [float]
+[   3.332][d][vo/gpu/opengl]   yuv411pf => 3 planes 4x1 32/0 [r16f/r16f/r16f] (r/g/b) [float]
+[   3.332][d][vo/gpu/opengl]   yuva411pf => 4 planes 4x1 32/0 [r16f/r16f/r16f/r16f] (r/g/b/a) [float]
+[   3.332][d][vo/gpu/opengl]   rgb30 => 1 planes 1x1 10/0 [rgb10_a2] (bgr) [unknown]
+[   3.332][d][vo/gpu/opengl]   y1 => 1 planes 1x1 8/-7 [r8] (r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp1 => 3 planes 1x1 8/-7 [r8/r8/r8] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp2 => 3 planes 1x1 8/-6 [r8/r8/r8] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp3 => 3 planes 1x1 8/-5 [r8/r8/r8] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp4 => 3 planes 1x1 8/-4 [r8/r8/r8] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp5 => 3 planes 1x1 8/-3 [r8/r8/r8] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp6 => 3 planes 1x1 8/-2 [r8/r8/r8] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   vdpau_output
+[   3.332][d][vo/gpu/opengl]   vaapi
+[   3.332][d][vo/gpu/opengl]   videotoolbox
+[   3.332][d][vo/gpu/opengl]   yuyv422
+[   3.332][d][vo/gpu/opengl]   yuv422p => 3 planes 2x1 8/0 [r8/r8/r8] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv410p => 3 planes 4x4 8/0 [r8/r8/r8] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv411p => 3 planes 4x1 8/0 [r8/r8/r8] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   monow
+[   3.332][d][vo/gpu/opengl]   monob
+[   3.332][d][vo/gpu/opengl]   yuvj422p => 3 planes 2x1 8/0 [r8/r8/r8] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   uyyvyy411
+[   3.332][d][vo/gpu/opengl]   bgr8
+[   3.332][d][vo/gpu/opengl]   bgr4
+[   3.332][d][vo/gpu/opengl]   bgr4_byte
+[   3.332][d][vo/gpu/opengl]   rgb8
+[   3.332][d][vo/gpu/opengl]   rgb4
+[   3.332][d][vo/gpu/opengl]   rgb4_byte
+[   3.332][d][vo/gpu/opengl]   nv21 => 2 planes 2x2 8/0 [r8/rg8] (r/bg) [unorm]
+[   3.332][d][vo/gpu/opengl]   gray16be
+[   3.332][d][vo/gpu/opengl]   yuv440p => 3 planes 1x2 8/0 [r8/r8/r8] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuvj440p => 3 planes 1x2 8/0 [r8/r8/r8] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva420p => 4 planes 2x2 8/0 [r8/r8/r8/r8] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   rgb48be
+[   3.332][d][vo/gpu/opengl]   rgb48 => 1 planes 1x1 16/0 [rgb16] (rgb) [unorm]
+[   3.332][d][vo/gpu/opengl]   rgb565be
+[   3.332][d][vo/gpu/opengl]   rgb555be
+[   3.332][d][vo/gpu/opengl]   rgb555
+[   3.332][d][vo/gpu/opengl]   bgr565be
+[   3.332][d][vo/gpu/opengl]   bgr565
+[   3.332][d][vo/gpu/opengl]   bgr555be
+[   3.332][d][vo/gpu/opengl]   bgr555
+[   3.332][d][vo/gpu/opengl]   vaapi_moco
+[   3.332][d][vo/gpu/opengl]   vaapi_idct
+[   3.332][d][vo/gpu/opengl]   yuv420p16 => 3 planes 2x2 16/0 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv420p16be
+[   3.332][d][vo/gpu/opengl]   yuv422p16 => 3 planes 2x1 16/0 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv422p16be
+[   3.332][d][vo/gpu/opengl]   yuv444p16 => 3 planes 1x1 16/0 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv444p16be
+[   3.332][d][vo/gpu/opengl]   rgb444
+[   3.332][d][vo/gpu/opengl]   rgb444be
+[   3.332][d][vo/gpu/opengl]   bgr444
+[   3.332][d][vo/gpu/opengl]   bgr444be
+[   3.332][d][vo/gpu/opengl]   ya8 => 1 planes 1x1 8/0 [rg8] (ra) [unorm]
+[   3.332][d][vo/gpu/opengl]   bgr48be
+[   3.332][d][vo/gpu/opengl]   bgr48 => 1 planes 1x1 16/0 [rgb16] (bgr) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv420p9be
+[   3.332][d][vo/gpu/opengl]   yuv420p9 => 3 planes 2x2 16/-7 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv420p10be
+[   3.332][d][vo/gpu/opengl]   yuv420p10 => 3 planes 2x2 16/-6 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv422p10be
+[   3.332][d][vo/gpu/opengl]   yuv422p10 => 3 planes 2x1 16/-6 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv444p9be
+[   3.332][d][vo/gpu/opengl]   yuv444p9 => 3 planes 1x1 16/-7 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv444p10be
+[   3.332][d][vo/gpu/opengl]   yuv444p10 => 3 planes 1x1 16/-6 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv422p9be
+[   3.332][d][vo/gpu/opengl]   yuv422p9 => 3 planes 2x1 16/-7 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp => 3 planes 1x1 8/0 [r8/r8/r8] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp9be
+[   3.332][d][vo/gpu/opengl]   gbrp9 => 3 planes 1x1 16/-7 [r16/r16/r16] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp10be
+[   3.332][d][vo/gpu/opengl]   gbrp10 => 3 planes 1x1 16/-6 [r16/r16/r16] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp16be
+[   3.332][d][vo/gpu/opengl]   gbrp16 => 3 planes 1x1 16/0 [r16/r16/r16] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva422p => 4 planes 2x1 8/0 [r8/r8/r8/r8] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva444p => 4 planes 1x1 8/0 [r8/r8/r8/r8] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva420p9be
+[   3.332][d][vo/gpu/opengl]   yuva420p9 => 4 planes 2x2 16/-7 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva422p9be
+[   3.332][d][vo/gpu/opengl]   yuva422p9 => 4 planes 2x1 16/-7 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva444p9be
+[   3.332][d][vo/gpu/opengl]   yuva444p9 => 4 planes 1x1 16/-7 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva420p10be
+[   3.332][d][vo/gpu/opengl]   yuva420p10 => 4 planes 2x2 16/-6 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva422p10be
+[   3.332][d][vo/gpu/opengl]   yuva422p10 => 4 planes 2x1 16/-6 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva444p10be
+[   3.332][d][vo/gpu/opengl]   yuva444p10 => 4 planes 1x1 16/-6 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva420p16be
+[   3.332][d][vo/gpu/opengl]   yuva420p16 => 4 planes 2x2 16/0 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva422p16be
+[   3.332][d][vo/gpu/opengl]   yuva422p16 => 4 planes 2x1 16/0 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva444p16be
+[   3.332][d][vo/gpu/opengl]   yuva444p16 => 4 planes 1x1 16/0 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   xyz12 => 1 planes 1x1 16/4 [rgb16] (rgb) [unorm]
+[   3.332][d][vo/gpu/opengl]   xyz12be
+[   3.332][d][vo/gpu/opengl]   nv16 => 2 planes 2x1 8/0 [r8/rg8] (r/gb) [unorm]
+[   3.332][d][vo/gpu/opengl]   nv20 => 2 planes 2x1 16/-6 [r16/rg16] (r/gb) [unorm]
+[   3.332][d][vo/gpu/opengl]   nv20be
+[   3.332][d][vo/gpu/opengl]   rgba64be
+[   3.332][d][vo/gpu/opengl]   bgra64be
+[   3.332][d][vo/gpu/opengl]   bgra64 => 1 planes 1x1 16/0 [rgba16] (bgra) [unorm]
+[   3.332][d][vo/gpu/opengl]   yvyu422
+[   3.332][d][vo/gpu/opengl]   ya16be
+[   3.332][d][vo/gpu/opengl]   ya16 => 1 planes 1x1 16/0 [rg16] (ra) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrap => 4 planes 1x1 8/0 [r8/r8/r8/r8] (g/b/r/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrap16be
+[   3.332][d][vo/gpu/opengl]   gbrap16 => 4 planes 1x1 16/0 [r16/r16/r16/r16] (g/b/r/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   qsv
+[   3.332][d][vo/gpu/opengl]   d3d11va_vld
+[   3.332][d][vo/gpu/opengl]   yuv420p12be
+[   3.332][d][vo/gpu/opengl]   yuv420p12 => 3 planes 2x2 16/-4 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv420p14be
+[   3.332][d][vo/gpu/opengl]   yuv420p14 => 3 planes 2x2 16/-2 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv422p12be
+[   3.332][d][vo/gpu/opengl]   yuv422p12 => 3 planes 2x1 16/-4 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv422p14be
+[   3.332][d][vo/gpu/opengl]   yuv422p14 => 3 planes 2x1 16/-2 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv444p12be
+[   3.332][d][vo/gpu/opengl]   yuv444p12 => 3 planes 1x1 16/-4 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv444p14be
+[   3.332][d][vo/gpu/opengl]   yuv444p14 => 3 planes 1x1 16/-2 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp12be
+[   3.332][d][vo/gpu/opengl]   gbrp12 => 3 planes 1x1 16/-4 [r16/r16/r16] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrp14be
+[   3.332][d][vo/gpu/opengl]   gbrp14 => 3 planes 1x1 16/-2 [r16/r16/r16] (g/b/r) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuvj411p => 3 planes 4x1 8/0 [r8/r8/r8] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   bayer_bggr8
+[   3.332][d][vo/gpu/opengl]   bayer_rggb8
+[   3.332][d][vo/gpu/opengl]   bayer_gbrg8
+[   3.332][d][vo/gpu/opengl]   bayer_grbg8
+[   3.332][d][vo/gpu/opengl]   bayer_bggr16
+[   3.332][d][vo/gpu/opengl]   bayer_bggr16be
+[   3.332][d][vo/gpu/opengl]   bayer_rggb16
+[   3.332][d][vo/gpu/opengl]   bayer_rggb16be
+[   3.332][d][vo/gpu/opengl]   bayer_gbrg16
+[   3.332][d][vo/gpu/opengl]   bayer_gbrg16be
+[   3.332][d][vo/gpu/opengl]   bayer_grbg16
+[   3.332][d][vo/gpu/opengl]   bayer_grbg16be
+[   3.332][d][vo/gpu/opengl]   xvmc
+[   3.332][d][vo/gpu/opengl]   yuv440p10 => 3 planes 1x2 16/-6 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv440p10be
+[   3.332][d][vo/gpu/opengl]   yuv440p12 => 3 planes 1x2 16/-4 [r16/r16/r16] (r/g/b) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuv440p12be
+[   3.332][d][vo/gpu/opengl]   ayuv64 => 1 planes 1x1 16/0 [rgba16] (argb) [unorm]
+[   3.332][d][vo/gpu/opengl]   ayuv64be
+[   3.332][d][vo/gpu/opengl]   p010be
+[   3.332][d][vo/gpu/opengl]   gbrap12be
+[   3.332][d][vo/gpu/opengl]   gbrap12 => 4 planes 1x1 16/-4 [r16/r16/r16/r16] (g/b/r/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrap10be
+[   3.332][d][vo/gpu/opengl]   gbrap10 => 4 planes 1x1 16/-6 [r16/r16/r16/r16] (g/b/r/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   gray12be
+[   3.332][d][vo/gpu/opengl]   gray12 => 1 planes 1x1 16/-4 [r16] (r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gray10be
+[   3.332][d][vo/gpu/opengl]   gray10 => 1 planes 1x1 16/-6 [r16] (r) [unorm]
+[   3.332][d][vo/gpu/opengl]   p016 => 2 planes 2x2 16/0 [r16/rg16] (r/gb) [unorm]
+[   3.332][d][vo/gpu/opengl]   p016be
+[   3.332][d][vo/gpu/opengl]   gray9be
+[   3.332][d][vo/gpu/opengl]   gray9 => 1 planes 1x1 16/-7 [r16] (r) [unorm]
+[   3.332][d][vo/gpu/opengl]   gbrpf32be
+[   3.332][d][vo/gpu/opengl]   gbrpf32 => 3 planes 1x1 32/0 [r16f/r16f/r16f] (g/b/r) [float]
+[   3.332][d][vo/gpu/opengl]   gbrapf32be
+[   3.332][d][vo/gpu/opengl]   gbrapf32 => 4 planes 1x1 32/0 [r16f/r16f/r16f/r16f] (g/b/r/a) [float]
+[   3.332][d][vo/gpu/opengl]   opencl
+[   3.332][d][vo/gpu/opengl]   gray14be
+[   3.332][d][vo/gpu/opengl]   gray14 => 1 planes 1x1 16/-2 [r16] (r) [unorm]
+[   3.332][d][vo/gpu/opengl]   grayf32be
+[   3.332][d][vo/gpu/opengl]   grayf32 => 1 planes 1x1 32/0 [r16f] (r) [float]
+[   3.332][d][vo/gpu/opengl]   yuva422p12be
+[   3.332][d][vo/gpu/opengl]   yuva422p12 => 4 planes 2x1 16/-4 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   yuva444p12be
+[   3.332][d][vo/gpu/opengl]   yuva444p12 => 4 planes 1x1 16/-4 [r16/r16/r16/r16] (r/g/b/a) [unorm]
+[   3.332][d][vo/gpu/opengl]   nv24 => 2 planes 1x1 8/0 [r8/rg8] (r/gb) [unorm]
+[   3.332][d][vo/gpu/opengl]   nv42 => 2 planes 1x1 8/0 [r8/rg8] (r/bg) [unorm]
+[   3.332][d][vo/gpu/opengl]   vulkan
+[   3.332][d][vo/gpu/opengl]   y210be
+[   3.332][d][vo/gpu/opengl]   y210
+[   3.332][v][vo/gpu] Testing FBO format rgba16f
+[   3.332][d][vo/gpu] Resizing texture: 16x16
+[   3.332][v][vo/gpu] Using FBO format rgba16f.
+[   3.332][v][vo/gpu] No advanced processing required. Enabling dumb mode.
+[   3.332][v][vo/gpu] Assuming 60.003141 FPS for display sync.
+[   3.333][v][vd] Container reported FPS: 29.970000
+[   3.333][v][vd] Codec list:
+[   3.333][v][vd]     h264 - H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10
+[   3.333][v][vd]     h264_v4l2m2m (h264) - V4L2 mem2mem H.264 decoder wrapper
+[   3.333][v][vd]     h264_qsv (h264) - H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 (Intel Quick Sync Video acceleration)
+[   3.333][v][vd]     h264_cuvid (h264) - Nvidia CUVID H264 decoder
+[   3.333][v][vd] Opening decoder h264
+[   3.333][v][vd] No hardware decoding requested.
+[   3.333][v][vd] Using software decoding.
+[   3.333][v][vd] Detected 4 logical cores.
+[   3.333][v][vd] Requesting 5 threads for decoding.
+[   3.334][v][vd] Selected codec: h264 (H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10)
+[   3.334][v][vf] User filter list:
+[   3.334][v][vf]   (empty)
+[   3.334][v][ad] Codec list:
+[   3.334][v][ad]     opus - Opus
+[   3.334][v][ad]     libopus (opus) - libopus Opus
+[   3.334][v][ad] Opening decoder opus
+[   3.334][v][ad] Requesting 1 threads for decoding.
+[   3.334][v][ad] Selected codec: opus (Opus)
+[   3.334][v][af] User filter list:
+[   3.334][v][af]   (empty)
+[   3.334][v][cplayer] Starting playback...
+[   3.334][v][timeline] switch to segment 0
+[   3.335][v][lavf] select track 0
+[   3.335][v][timeline] switch to segment 0
+[   3.335][v][mkv] select track 0
+[   3.335][d][timeline] stream 0: resize index to 128
+[   3.335][d][timeline] stream 1: resize index to 128
+[   3.335][d][ffmpeg/video] h264: Reinit context to 1280x720, pix_fmt: yuv420p
+[   3.335][d][vd] DR parameter change to 1280x738 yuv420p align=64
+[   3.335][d][vd] Allocating new DR image...
+[   3.337][d][vd] Allocating new DR image...
+[   3.338][d][vd] Allocating new DR image...
+[   3.339][d][vd] Allocating new DR image...
+[   3.341][d][vd] Allocating new DR image...
+[   3.343][v][vd] Using software decoding.
+[   3.343][v][vd] Decoder format: 1280x720 yuv420p bt.709/bt.709/bt.1886/limited/auto CL=mpeg2/4/h264
+[   3.343][v][vf] [in] 1280x720 yuv420p bt.709/bt.709/bt.1886/limited/display SP=1.000000 CL=mpeg2/4/h264
+[   3.343][v][vf] [userdeint] 1280x720 yuv420p bt.709/bt.709/bt.1886/limited/display SP=1.000000 CL=mpeg2/4/h264
+[   3.343][v][vf] [userdeint] (disabled)
+[   3.343][v][vf] [autorotate] 1280x720 yuv420p bt.709/bt.709/bt.1886/limited/display SP=1.000000 CL=mpeg2/4/h264
+[   3.343][v][vf] [autorotate] (disabled)
+[   3.343][v][vf] [convert] 1280x720 yuv420p bt.709/bt.709/bt.1886/limited/display SP=1.000000 CL=mpeg2/4/h264
+[   3.343][v][vf] [convert] (disabled)
+[   3.343][v][vf] [out] 1280x720 yuv420p bt.709/bt.709/bt.1886/limited/display SP=1.000000 CL=mpeg2/4/h264
+[   3.343][v][af] [in] 48000Hz stereo 2ch floatp
+[   3.343][v][af] [userspeed] 48000Hz stereo 2ch floatp
+[   3.343][v][af] [userspeed] (disabled)
+[   3.343][v][af] [convert] 48000Hz stereo 2ch floatp
+[   3.344][d][vd] Allocating new DR image...
+[   3.345][d][cplayer] Run command: change-list, flags=64, args=[name="shared-script-properties", operation="append", value="osc-margins=0.000000,0.000000,0.000000,0.000000"]
+[   3.345][v][cplayer] Set property: shared-script-properties -> 1
+[   3.345][v][ao] Trying audio driver 'pulse'
+[   3.345][v][ao/pulse] requested format: 48000 Hz, stereo channels, floatp
+[   3.346][v][ao/pulse] Library version: 14.2.0
+[   3.346][v][ao/pulse] Proto: 34
+[   3.346][v][ao/pulse] Server proto: 4294967295
+[   3.348][v][ao/pulse] Channel layouts:
+[   3.348][v][ao/pulse]  - #fl
+[   3.348][v][ao/pulse]  - #fr
+[   3.348][v][ao/pulse]  - #fc
+[   3.348][v][ao/pulse]  - #lfe
+[   3.348][v][ao/pulse]  - #bl
+[   3.348][v][ao/pulse]  - #br
+[   3.348][v][ao/pulse]  - #flc
+[   3.348][v][ao/pulse]  - #frc
+[   3.348][v][ao/pulse]  - #bc
+[   3.348][v][ao/pulse]  - #sl
+[   3.348][v][ao/pulse]  - #sr
+[   3.348][v][ao/pulse]  - #tc
+[   3.348][v][ao/pulse]  - #tfl
+[   3.348][v][ao/pulse]  - #tfc
+[   3.349][v][ao/pulse]  - #tfr
+[   3.349][v][ao/pulse]  - #tbl
+[   3.349][v][ao/pulse]  - #tbc
+[   3.349][v][ao/pulse]  - #tbr
+[   3.349][v][ao/pulse] result: stereo
+[   3.392][v][ao/pulse] device buffer: 4800 samples.
+[   3.392][v][ao/pulse] using soft-buffer of 9600 samples.
+[   3.392][i][cplayer] AO: [pulse] 48000Hz stereo 2ch float
+[   3.392][v][cplayer] AO: Description: PulseAudio audio output
+[   3.392][v][autoconvert] inserting resampler
+[   3.392][v][swresample] format change, reinitializing resampler
+[   3.392][v][swresample] 48000Hz stereo floatp -> 48000Hz stereo float
+[   3.392][v][af] [out] 48000Hz stereo 2ch float
+[   3.392][d][vd] Allocating new DR image...
+[   3.392][i][cplayer] VO: [gpu] 1280x720 yuv420p
+[   3.392][v][cplayer] VO: Description: Shader-based GPU Renderer
+[   3.393][v][vo/gpu] reconfig to 1280x720 yuv420p bt.709/bt.709/bt.1886/limited/display SP=1.000000 CL=mpeg2/4/h264
+[   3.393][d][vo/gpu] screen size: 1366x768
+[   3.397][v][vo/gpu/x11] not waiting for MapNotify
+[   3.397][v][vo/gpu] Resize: 1280x720
+[   3.397][v][vo/gpu] Window size: 1280x720 (Borders: l=0 t=0 r=0 b=0)
+[   3.397][v][vo/gpu] Video source: 1280x720 (1:1)
+[   3.397][v][vo/gpu] Video display: (0, 0) 1280x720 -> (0, 0) 1280x720
+[   3.397][v][vo/gpu] Video scale: 1.000000/1.000000
+[   3.397][v][vo/gpu] OSD borders: l=0 t=0 r=0 b=0
+[   3.397][v][vo/gpu] Video borders: l=0 t=0 r=0 b=0
+[   3.397][v][vo/gpu] Reported display depth: 8
+[   3.397][v][vo/gpu] Texture for plane 0: 1280x720
+[   3.398][v][vo/gpu] Texture for plane 1: 640x360
+[   3.398][v][vo/gpu] Texture for plane 2: 640x360
+[   3.398][v][vo/gpu] Testing FBO format rgba16f
+[   3.398][d][vo/gpu] Resizing texture: 16x16
+[   3.399][v][vo/gpu] Using FBO format rgba16f.
+[   3.399][v][vo/gpu] No advanced processing required. Enabling dumb mode.
+[   3.400][v][vo/gpu] DR enabled: yes
+[   3.408][d][vo/gpu/opengl] vertex shader source:
+[   3.408][d][vo/gpu/opengl] [  1] #version 440
+[   3.408][d][vo/gpu/opengl] [  2] #define tex1D texture
+[   3.408][d][vo/gpu/opengl] [  3] #define tex3D texture
+[   3.408][d][vo/gpu/opengl] [  4] #define LUT_POS(x, lut_size) mix(0.5 / (lut_size), 1.0 - 0.5 / (lut_size), (x))
+[   3.408][d][vo/gpu/opengl] [  5] in vec2 vertex_position;
+[   3.408][d][vo/gpu/opengl] [  6] in vec2 vertex_texcoord0;
+[   3.408][d][vo/gpu/opengl] [  7] out vec2 texcoord0;
+[   3.408][d][vo/gpu/opengl] [  8] in vec2 vertex_texcoord1;
+[   3.408][d][vo/gpu/opengl] [  9] out vec2 texcoord1;
+[   3.408][d][vo/gpu/opengl] [ 10] in vec2 vertex_texcoord2;
+[   3.408][d][vo/gpu/opengl] [ 11] out vec2 texcoord2;
+[   3.408][d][vo/gpu/opengl] [ 12] void main() {
+[   3.408][d][vo/gpu/opengl] [ 13] gl_Position = vec4(vertex_position, 1.0, 1.0);
+[   3.408][d][vo/gpu/opengl] [ 14] texcoord0 = vertex_texcoord0;
+[   3.408][d][vo/gpu/opengl] [ 15] texcoord1 = vertex_texcoord1;
+[   3.408][d][vo/gpu/opengl] [ 16] texcoord2 = vertex_texcoord2;
+[   3.408][d][vo/gpu/opengl] [ 17] }
+[   3.408][d][vo/gpu/opengl] fragment shader source:
+[   3.408][d][vo/gpu/opengl] [  1] #version 440
+[   3.408][d][vo/gpu/opengl] [  2] #define tex1D texture
+[   3.408][d][vo/gpu/opengl] [  3] #define tex3D texture
+[   3.408][d][vo/gpu/opengl] [  4] #define LUT_POS(x, lut_size) mix(0.5 / (lut_size), 1.0 - 0.5 / (lut_size), (x))
+[   3.408][d][vo/gpu/opengl] [  5] out vec4 out_color;
+[   3.408][d][vo/gpu/opengl] [  6] in vec2 texcoord0;
+[   3.408][d][vo/gpu/opengl] [  7] in vec2 texcoord1;
+[   3.408][d][vo/gpu/opengl] [  8] in vec2 texcoord2;
+[   3.408][d][vo/gpu/opengl] [  9] layout(std140, binding=0) uniform UBO {
+[   3.408][d][vo/gpu/opengl] [ 10] layout(offset=0) mat3 colormatrix;
+[   3.408][d][vo/gpu/opengl] [ 11] layout(offset=48) vec3 colormatrix_c;
+[   3.408][d][vo/gpu/opengl] [ 12] layout(offset=64) vec3 src_luma;
+[   3.408][d][vo/gpu/opengl] [ 13] layout(offset=80) vec3 dst_luma;
+[   3.408][d][vo/gpu/opengl] [ 14] layout(offset=96) vec2 texture_size0;
+[   3.408][d][vo/gpu/opengl] [ 15] layout(offset=112) mat2 texture_rot0;
+[   3.408][d][vo/gpu/opengl] [ 16] layout(offset=144) vec2 texture_off0;
+[   3.408][d][vo/gpu/opengl] [ 17] layout(offset=152) vec2 pixel_size0;
+[   3.408][d][vo/gpu/opengl] [ 18] layout(offset=160) vec2 texture_size1;
+[   3.408][d][vo/gpu/opengl] [ 19] layout(offset=176) mat2 texture_rot1;
+[   3.408][d][vo/gpu/opengl] [ 20] layout(offset=208) vec2 texture_off1;
+[   3.408][d][vo/gpu/opengl] [ 21] layout(offset=216) vec2 pixel_size1;
+[   3.408][d][vo/gpu/opengl] [ 22] layout(offset=224) vec2 texture_size2;
+[   3.408][d][vo/gpu/opengl] [ 23] layout(offset=240) mat2 texture_rot2;
+[   3.408][d][vo/gpu/opengl] [ 24] layout(offset=272) vec2 texture_off2;
+[   3.408][d][vo/gpu/opengl] [ 25] layout(offset=280) vec2 pixel_size2;
+[   3.408][d][vo/gpu/opengl] [ 26] };
+[   3.408][d][vo/gpu/opengl] [ 27] uniform sampler2D texture0;
+[   3.408][d][vo/gpu/opengl] [ 28] uniform sampler2D texture1;
+[   3.408][d][vo/gpu/opengl] [ 29] uniform sampler2D texture2;
+[   3.408][d][vo/gpu/opengl] [ 30] void main() {
+[   3.408][d][vo/gpu/opengl] [ 31] vec4 color = vec4(0.0, 0.0, 0.0, 1.0);
+[   3.408][d][vo/gpu/opengl] [ 32] color.r = 1.000000 * vec4(texture(texture0, texcoord0)).r;
+[   3.408][d][vo/gpu/opengl] [ 33] color.g = 1.000000 * vec4(texture(texture1, texcoord1)).r;
+[   3.408][d][vo/gpu/opengl] [ 34] color.b = 1.000000 * vec4(texture(texture2, texcoord2)).r;
+[   3.408][d][vo/gpu/opengl] [ 35] color = color.rgbr;
+[   3.408][d][vo/gpu/opengl] [ 36] color.rgb = mat3(colormatrix) * color.rgb + colormatrix_c;
+[   3.408][d][vo/gpu/opengl] [ 37] color.a = 1.0;
+[   3.408][d][vo/gpu/opengl] [ 38] // color mapping
+[   3.408][d][vo/gpu/opengl] [ 39] color.rgb *= vec3(1.000000);
+[   3.408][d][vo/gpu/opengl] [ 40] color.rgb *= vec3(1.000000);
+[   3.408][d][vo/gpu/opengl] [ 41] out_color = color;
+[   3.408][d][vo/gpu/opengl] [ 42] }
+[   3.408][d][vo/gpu/opengl] shader link log (status=1): 
+[   3.411][v][cplayer] first video frame after restart shown
+[   3.411][d][osc] osc_init 
+[   3.412][v][cplayer] audio ready
+[   3.412][d][cplayer] starting video playback
+[   3.412][v][cplayer] delaying audio start 0.001000 vs. 0.000000, diff=0.001000
+[   3.412][v][cplayer] playback restart complete @ 0.000000, audio=ready, video=playing
+[   3.413][d][vd] Allocating new DR image...
+[   3.413][v][cplayer] starting audio playback
+[   3.415][v][ao/pulse] starting AO
+[   3.415][d][cplayer] Run command: change-list, flags=64, args=[name="shared-script-properties", operation="append", value="osc-margins=0.000000,0.000000,0.000000,0.000000"]
+[   3.415][v][cplayer] Set property: shared-script-properties -> 1
+[   3.420][v][vo/gpu/x11] Disabling screensaver.
+[   3.421][d][vd] Allocating new DR image...
+[   3.421][d][osc] osc_init 
+[   3.422][d][cplayer] Run command: change-list, flags=64, args=[name="shared-script-properties", operation="append", value="osc-margins=0.000000,0.000000,0.000000,0.000000"]
+[   3.423][v][cplayer] Set property: shared-script-properties -> 1
+[   3.506][d][vd] Allocating new DR image...
+[   4.606][d][vd] Allocating new DR image...
+[   5.604][d][vd] Allocating new DR image...
+[   6.100][w][input] No key binding found for key 'c'.
+[   9.857][d][cplayer] Run command: quit, flags=73, args=[code="4"]
+[   9.857][v][cplayer] EOF code: 5  
+[   9.857][d][ad] Uninit decoder.
+[   9.858][d][vd] Uninit decoder.
+[   9.860][d][cplayer] Terminating demuxers...
+[   9.888][v][vo/gpu/x11] Enabling screensaver.
+[   9.961][v][cplayer] Forcefully terminating demuxers...
+[  10.048][w][ffmpeg] https: Will reconnect at 6291408 in 0 second(s), error=Input/output error.
+[  10.048][w][ffmpeg/demuxer] mov,mp4,m4a,3gp,3g2,mj2: Packet corrupt (stream = 0, dts = 636400).
+[  10.048][e][ffmpeg] NULL: Invalid NAL unit size (1498 > 407).
+[  10.048][e][ffmpeg] NULL: missing picture in access unit with size 411
+[  10.048][d][ffmpeg] AVIOContext: Statistics: 6291408 bytes read, 0 seeks
+[  10.048][d][ffmpeg] AVIOContext: Statistics: 917504 bytes read, 0 seeks
+[  10.051][d][cplayer] Done terminating demuxers.
+[  10.051][v][cplayer] finished playback, success (reason 3)
+[  10.051][i][cplayer] 
+[  10.051][i][cplayer] Exiting... (Quit)
+[  10.051][d][image] Exiting...
+[  10.051][d][seek_to] Exiting...
+[  10.051][d][youtube_quality] Exiting...
+[  10.052][d][mpv_concat] Exiting...
+[  10.052][d][ytdl_hook] Exiting...
+[  10.052][d][cplayer] Run command: change-list, flags=64, args=[name="shared-script-properties", operation="remove", value="osc-margins"]
+[  10.052][v][cplayer] Set property: shared-script-properties -> 1
+[  10.052][d][modules] Exiting...
+[  10.052][d][console] Exiting...
+[  10.052][d][stats] Exiting...
+[  10.053][d][osc] Exiting...
+[  10.057][d][vo/gpu] flushing shader cache
+[  10.061][d][vo/gpu/x11] uninit ...

@@ -1,0 +1,70 @@
+#!/bin/bash
+# File              : dmenu-bluetooth
+# License           : MIT License
+# Author            : kopishitam at disroot dot org
+# Date              : Rabu, 06/02/2021 12:03 WIB
+# Last Modified Date: -
+# Last Modified By  : Hafiz C. kopishitam at disroot dot org
+
+DMENU="rofi -dmenu -lines 2 -width 10 -i -p Bluetooth"
+blutoothpid="/tmp/blutoothpid"
+
+BASE_DIR="$( readlink -f "$(dirname "$0")" )"
+ICON_PATH="/usr/share/icons/Paper/22x22/panel/bluetooth-active.svg"
+
+function bt_on() {
+    rfkill unblock bluetooth
+    sudo -A rc-service bluetoothd restart
+    sleep 3
+    bluetoothctl power on
+
+    if [[ "$res" -eq 0 ]]; then
+        summary="Bluetooth"
+        body="Bluetooth powered on"
+
+        notify-send "$summary" "$body" -u normal -i "$ICON_PATH"
+    fi
+
+    echo $! >$blutoothpid
+}
+
+
+function bt_off() {
+    bluetoothctl power off
+    res="$?"
+
+    rfkill block bluetooth
+
+    if [[ "$res" -eq 0 ]]; then
+        summary="Bluetooth"
+        body="Bluetooth powered OFF"
+
+        notify-send "$summary" "$body" -u normal -i "$ICON_PATH"
+    fi
+
+    rm $blutoothpid
+}
+
+function main() {
+    OPTIONS='''
+    [
+        ["ON",        "bt_on"],
+        ["OFF",       "bt_off"]
+    ]
+    '''
+    select=$(echo $OPTIONS | jq -r ".[][0]" | $DMENU)
+    eval $(echo $OPTIONS | jq -r ".[] | select(.[0] == \"$select\") | .[1]")
+}
+
+main
+
+# asktoend() { \
+#     response=$(printf "No\\nYes" | $DMENU -i -p "Recording still active. End recording?") &&
+#     [ "$response" = "Yes" ] &&  killrecording
+# }
+
+# main
+#     case $1 in
+#     1)
+#     *) ([ -f $blutoothpid ] && asktoend && exit);;
+#     esac

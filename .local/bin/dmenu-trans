@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# MENU="/usr/local/bin/dmenu"
+MENU="/usr/bin/rofi -dmenu -lines 3 -width 200"
+
+en_id() {
+    st -t 'st+:Translate Shell [EN:ID]' \
+    -g 60x8-5-20 \
+    -e trans -no-view -no-pager -indent 0 -j \
+    -hl en \
+    -shell \
+    -show-original-phonetics n \
+    -show-translation y \
+    -show-translation-phonetics n \
+    -show-prompt-message n \
+    -show-languages n \
+    -show-original-dictionary n \
+    -show-dictionary n \
+    -show-alternatives n \
+    en:id
+}
+
+id_en() {
+    st -t 'st+:Translate Shell [ID:EN]' \
+    -g 60x8-5-20 \
+    -e trans -no-view -no-pager -indent 0 -j \
+    -hl en \
+    -shell \
+    -show-original-phonetics n \
+    -show-translation y \
+    -show-translation-phonetics n \
+    -show-prompt-message n \
+    -show-languages n \
+    -show-original-dictionary n \
+    -show-dictionary n \
+    -show-alternatives n \
+    id:en
+}
+
+vim_translate() {
+    st -t 'st+:Translate Playground' -g 85x20-0-0 -e vim ~/.translate
+}
+
+kbbi() {
+  dmenu-kbbi
+    # st -t 'st+:Kamus Besar Bahasa' \
+    # -g 100x10-800-20
+}
+
+OPTIONS=$(echo -e "en-id\nid-en\nkbbi" | $MENU -p " Translate")
+
+case "$OPTIONS" in
+    "en-id") en_id;;
+    "id-en") id_en;;
+    "kbbi") kbbi;;
+
+    # "Playground") vim_translate;;
+esac

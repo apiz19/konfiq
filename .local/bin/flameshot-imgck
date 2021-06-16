@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'date'
+
+# Please wite your dir with ~/ first
+screenshot_dir    = '~/pic/ScreenShots'
+Dir.chdir(File.expand_path(screenshot_dir))
+original_file     = Time.now.strftime('Screenshot_%Y-%m-%d_%H-%M-%S.png')
+
+system "
+flameshot gui --raw > #{original_file}
+notify-send 'Flameshot' 'Doing good...' -t 1000
+scrot-mac
+"

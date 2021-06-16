@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# TODO: child exited with status 2
+DMENU="rofi -dmenu -lines 15 -width 1300 -i -p Kata-kata"
+KATA="/tmp/kata"
+
+function main() {
+  rofi -dmenu -i -l 0 -width 20 -p " Cari Kata" > $KATA
+  kbbi $(cat $KATA) 2>/dev/null | $DMENU
+  # kbbi $(cat $KATA) | cut -c1-$(stty size </dev/tty | cut -d' ' -f3) | $DMENU
+}
+
+ # st -t 'st+:Kamus Besar Bahasa' -g 100x10-800-20
+# function show_term() {
+#   st -e kbbi "$(cat $KATA)"
+# }
+
+main

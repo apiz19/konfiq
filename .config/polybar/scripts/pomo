@@ -1,0 +1,20 @@
+#!/bin/sh
+
+  if command -v pomo > /dev/null 2>&1; then
+    pomostat=$(pomo clock | awk '{print $1}')
+    if   [ $pomostat = '--:--' ]; then
+			echo ""
+    elif [ $pomostat = "W" ]; then
+      echo -n "%{F#4dc0ae}%{F-} ["$(pomo clock)"]"
+    elif [ $pomostat = "PW" ]; then
+      echo -n "%{F#4dc0ae}ﮫ%{F-} ["$(pomo clock)"]"
+    elif [ $pomostat = "B" ]; then
+      echo -n "%{F#4dc0ae}%{F-} ["$(pomo clock)"]"
+		fi
+	fi
+
+case $1 in
+	1) pomo start && notify-send " Pomodoro" "  START";;
+	2) pomo stop && notify-send " Pomodoro" "  STOP" ;;
+	3) pomo pause && notify-send " Pomodoro" "  PAUSE / RESTART";; # Toggle pause/restart
+esac

@@ -1,0 +1,80 @@
+#!/usr/bin/env ruby
+
+if ARGV.empty?
+  # Please wite your dir with ~/ first
+  screenshot_dir  = "~/pic/ScreenShots"
+  Dir.chdir(File.expand_path(screenshot_dir))
+  ss_dir          = Dir.pwd
+  list_file       = %x(ls -p | grep -v /)
+  files           = list_file.split(" ")
+  original_file   = files.last
+  target_file     = files.last.split("").insert(-5, "X").join
+else
+  original_file   = ARGV[0]
+  target_file     = original_file.split("").insert(-5, "X").join
+end
+color_profile     = "/usr/share/color/icc/colord/sRGB.icc"
+border_radius     = "3"
+background_color  = "'#f8f8fa'" # "none" for transparent; Hex color use "'#0000000'"
+border_size       = "3"
+shadow_size       = "30x10+0+0"
+font              = "FiraCode-Nerd-Font-Mono"
+font_size         = "11"
+color_fg          = "#282828"
+color_bg          = "#83915f"
+# author_position   = ["SouthWest", "+575+15"]
+author_position  = ["SouthWest", "+55+15"]
+# author            = "// taken by #{`echo "Hafiz C. at $(date "+%I%M-%d%m%y")"`.strip}"
+author            = "// taken by Hafiz C. at #{`echo "$(date "+%I%M-%d%m%y%p")"`.strip}"
+
+%x(
+convert #{original_file} \\( +clone  -alpha extract \
+-draw 'fill black polygon 0,0 0,#{border_radius} #{border_radius},0 \
+fill white circle #{border_radius},#{border_radius} #{border_radius},0' \
+\\( +clone -flip \\) -compose Multiply -composite \
+\\( +clone -flop \\) -compose Multiply -composite \
+\\) -alpha off -compose CopyOpacity -composite -compose over \
+\\( +clone -background black -shadow #{shadow_size} \\) \
++swap -background none -layers merge +repage #{target_file}
+
+convert #{target_file} \\( +clone -background black \
+-shadow #{shadow_size} \\) +swap -background none \
+-layers merge +repage #{target_file}; \
+
+# convert #{target_file} -bordercolor #{background_color} \
+# -border #{border_size} #{target_file}
+
+echo -n " #{author} " | convert #{target_file} \
+-gravity #{author_position[0]} -pointsize #{font_size} -fill '#{color_fg}' \
+-undercolor '#{color_bg}' -font #{font} \
+-annotate #{author_position[1]} @- #{target_file}
+
+# convert #{target_file} -gravity South -chop 0x#{(border_size.to_i / 2) + 14} \
+# #{target_file}
+
+# convert #{target_file} -gravity North -background #{background_color} \
+# -splice 0x#{(border_size.to_i / 2) + 20} #{target_file}
+
+convert #{target_file} -profile #{color_profile} #{target_file}
+)
+
+%x(optipng #{target_file}) if %x(which optipng > /dev/null 2>&1)
+
+puts "
+SOURCE: #{original_file}
+TARGET: #{target_file}
+FRAMING SUCCESS!"
+
+list_file = `ls -p | grep -v /`
+last_file = list_file.split(" ").last
+if last_file.include? "X"
+  `notify-send "ImageMagick" "Improving success!" -t 1000`
+  system "xclip -selection clipboard -i #{target_file} -t image/png"
+  exit
+end
+
+size = `find #{last_file} -printf %s`
+if size <= "20"
+  `rm -rf #{last_file}`
+  `notify-send "Flameshot" "Process Aborted!" -t 1000`
+end

@@ -1,0 +1,81 @@
+{
+  // suggestions
+  // "suggest.echodocSupport": true,
+  // TODO add more labels and give them cool glyphs
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": "f"
+  },
+  // diagnostics
+  "diagnostic.errorSign": "✗",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": " ",
+  // "diagnostic.displayByAle": true,
+  // codelens TODO what does this get me?
+  // "codeLens.enable": true,
+  // list
+  "list.indicator": ">",
+  "list.selectedSignText": " ",
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "tex",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "sh",
+    "python"
+  ],
+  "coc.preferences.hoverTarget": "float",
+  // snippets
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/utils/snips"
+  ],
+  // explorer
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.keyMappings.global": {
+    "<cr>": [
+      "expandable?",
+      "expand",
+      "open"
+    ],
+    "v": "open:vsplit"
+  },
+  "coc.source.emoji.triggerCharacters": [
+    "TRIGGERCHAR"
+  ],
+  //linting
+  //"coc.source.vimtex.disableSyntaxes": true,
+  "languageserver": {
+    "arduino": {
+      "command": "~/git/arduino-language-server/arduino-language-server",
+      "rootPatterns": [
+        "*.ino"
+      ],
+      "filetypes": [
+        "arduino"
+      ],
+      "args": [
+        "-cli",
+        "/usr/bin/arduino-cli",
+        "-clangd",
+        "/usr/bin/clangd",
+        "-cli-config",
+        "~/.arduino15/arduino-cli.yaml"
+      ]
+    }
+  }
+  // TODO language servers
+  // TODO g:coc_global_extensions
+  // TODO b:coc_suggest_disable=1 GOYO
+  // TODO add to paths.vim g:coc_node_path
+}

@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# MIT License
+
+# Copyright (C) 2020 Rizqi Nur Assyaufi <bandithijo@gmail.com>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+# FreeBSD
+#cap_percentage=$(df -h / | tail -1 | awk '{print $(NF-1)}' | cut -d "G" -f1)
+#cap_avail=$(df -h / | tail -1 | awk '{print $(NF-2)}' | cut -d "G" -f1)
+#cap_total=$(df -h / | tail -1 | awk '{print $(NF-4)}' | cut -d "G" -f1)
+#echo $cap_avail"/"$cap_total"G ("$cap_percentage")"
+#echo $cap_percentage
+
+# GNU/Linux
+case $BLOCK_BUTTON in
+	1) notify-send "🖥 Disk" "$(df -h /home | awk 'NR%1==0 {print $4,$5}')" ;;
+	# 2) setsid -f "$TERMINAL" -e htop ;;
+esac
+
+icon=""
+cap_percentage=$(df -h --output=pcent / | awk 'NR%2==0 {print $0}'  | cut -f 1 -d '%'  | xargs)
+if [ $cap_percentage -ge 90 ]; then
+    printf "^c#CB4B16^$icon $cap_percentage^d^"
+elif [ $cap_percentage -ge 80 ] && [ $cap_percentage -ge 89 ]; then
+    printf "^c#CB4B16^$icon $cap_percentage^d^"
+else
+    printf "$icon $cap_percentage%%"
+fi

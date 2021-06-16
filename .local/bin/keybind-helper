@@ -1,0 +1,14 @@
+#!/bin/sh
+
+pilihan="SXHKD\nDWM\nMPV\nST\nTMUX\nVIM"
+
+terpilih=$(echo -e "$pilihan" | rofi -dmenu -i -p KEYBINDS -lines 5 -width 200)
+
+case "$terpilih" in
+    SXHKD) dmenu_sxhkd ;;
+    DWM) dunstify "$terpilih KEYBINDS" "`tail -n 55 $HOME/.config/rofi/rofi-help/keybinds-dwm`" ;;
+    MPV) dunstify "$terpilih KEYBINDS" "`tail -n 55 $HOME/.config/rofi/rofi-help/keybinds-mpv`" ;;
+    ST) dunstify "$terpilih KEYBINDS" "`tail -n 55 $HOME/.config/rofi/rofi-help/keybinds-st`" ;;
+    TMUX) dunstify "$terpilih KEYBINDS" "`tail -n 55 $HOME/.config/rofi/rofi-help/keybinds-tmux`" ;;
+    VIM) dunstify "$terpilih KEYBINDS" "`tail -n 55 $HOME/.config/rofi/rofi-help/keybinds-vim`" ;;
+esac

@@ -1,0 +1,71 @@
+#!/bin/sh
+
+clock() {
+    printf "$($HOME/.local/bin/bar/sb-clock)"
+}
+
+hdd() {
+    printf "$($HOME/.local/bin/bar/sb-filesystem)"
+}
+
+mem() {
+    printf "$($HOME/.local/bin/bar/sb-memory)"
+}
+
+cputemp() {
+    printf "$($HOME/.local/bin/bar/sb-cpu-temp)"
+}
+
+vol() {
+	printf "$($HOME/.local/bin/bar/sb-volume)"
+}
+
+battery() {
+	printf "$($HOME/.local/bin/bar/sb-battery)"
+}
+
+bright() {
+  printf "$($HOME/.local/bin/bar/sb-backlight)"
+}
+
+internet() {
+    printf "$($HOME/.local/bin/bar/sb-internet)"
+}
+
+nettraf() {
+    printf "$($HOME/.local/bin/bar/sb-nettraf)"
+}
+
+tor() {
+    printf "$($HOME/.local/bin/bar/sb-torrent)"
+}
+
+misc() {
+    printf "$($HOME/.local/bin/bar/sb-misc)"
+}
+
+# spotify() {
+#     printf "$($HOME/.local/bin/status/db-spotify)"
+# }
+
+# countdown() {
+#     printf "$($HOME/.local/bin/status/db-countdown)"
+# }
+
+cmus() {
+    printf "$($HOME/.local/bin/bar/sb-cmus)"
+}
+
+status_top() {
+  printf "$(misc) $(vol) $(bright)%% $(battery)%% $(clock)"
+}
+
+status_bottom() {
+  printf "$(nettraf) $(internet)  $(cputemp) $(mem)%% $(hdd)%% $(cmus)"
+}
+
+while true; do
+  xsetroot -name "$(status_top);$(status_bottom)"
+  # xsetroot -name "$(echo -e 'sb-misc |\x02 sb-volume |\x03 sb-backlight |\x04 sb-battery |\x05 sb-clock ; |\x06 sb-nettraf |\x07 sb-internet |\x08 sb-cpu-temp |\x09 sb-memory |\x10 sb-filesystem |\x11 sb-cmus')"
+	sleep 1s
+done

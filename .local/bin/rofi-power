@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# rofi-power
+# Use rofi to call systemctl for shutdown, reboot, etc
+
+# 2016 Oliver Kraitschy - http://okraits.de
+
+OPTIONS="Reboot system\nPower-off system\nSuspend system\nHibernate system\nRenew dwm\nRebar\nLock Machine"
+
+# source configuration or use default values
+if [ -f $HOME/.config/rofi/rofi-power/config ]; then
+  source $HOME/.config/rofi/rofi-power/config
+fi
+
+# Show exit wm option if exit command is provided as an argument
+if [ ${#1} -gt 0 ]; then
+  OPTIONS="Exit window manager\n$OPTIONS"
+fi
+
+option=`echo -e $OPTIONS | $LAUNCHER | awk '{print $1}' | tr -d '\r\n'`
+if [ ${#option} -gt 0 ]
+then
+    case $option in
+      Exit)
+        # eval $1
+        pkill -15 $1
+        # killall $1
+        ;;
+      Reboot)
+        loginctl reboot
+        #systemctl reboot
+        #shutdown -r now
+        ;;
+      Power-off)
+        loginctl poweroff
+        #systemctl poweroff
+        #shutdown -p now
+        ;;
+      Suspend)
+        $($USE_LOCKER) && "$LOCKER"; loginctl suspend
+        #$($USE_LOCKER) && "$LOCKER"; systemctl suspend
+        #acpiconf -s 3
+        ;;
+      Hibernate)
+        $($USE_LOCKER) && "$LOCKER"; loginctl hibernate
+        #$($USE_LOCKER) && "$LOCKER"; systemctl hibernate
+        # notify-send "CAUTION!" "Hibernate Feature not implemented yet." --urgency=critical
+        ;;
+      Renew)
+        dwmpid="$(pgrep -u $USER "\bdwm$")"
+        kill -HUP $dwmpid
+        ;;
+      Rebar)
+        # killall -q dwmblocks;setsid dwmblocks
+        pkill polybar
+        sleep 3
+        sh ~/.config/polybar/scripts/launch-polybar
+        ;;
+      Lock)
+        slock -m "$(fortune wisdom -l)"
+        ;;
+      *)
+        ;;
+    esac
+fi

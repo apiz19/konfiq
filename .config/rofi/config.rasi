@@ -1,0 +1,8 @@
+configuration {
+	modi: "drun,window";
+	combi-modi: "window,drun,ssh";
+	font: "FiraCode Nerd Font Mono Light 10";
+	hide-scrollbar: true;
+}
+
+@theme "~/.cache/wal/colors-rofi-dark.rasi"

@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# MENU="/usr/local/bin/dmenu"
+MENU="/usr/bin/rofi -dmenu -lines 8 -width 200"
+
+captureFullScreen() {
+    $HOME/.local/bin/scrot-full
+}
+
+captureFullScreenPlus() {
+    $HOME/.local/bin/scrot-full
+    $HOME/.local/bin/scrot-mac
+    # $HOME/.local/bin/scrot-mac-python
+}
+
+captureFullScreenTime() {
+    $HOME/.local/bin/scrot-time
+}
+
+captureWindow() {
+    $HOME/.local/bin/scrot-window
+    xclip -selection clipboard -i $@ -t image/png;
+}
+
+captureWindowPlus() {
+    $HOME/.local/bin/scrot-window-imgck
+}
+
+captureFlameshot() {
+    /usr/bin/flameshot gui
+}
+
+captureFlameshotPlus() {
+    $HOME/.local/bin/flameshot-imgck
+}
+
+captureFlameshotTime() {
+    sleep 3
+    $HOME/.local/bin/flameshot-imgck
+}
+
+cropLaptop() {
+    $HOME/.local/bin/imgmagick-crop-laptop $1
+}
+
+cropMonitor() {
+    $HOME/.local/bin/imgmagick-crop-monitor $1
+}
+
+# menu name         function name
+OPTIONS='''
+[
+["Fullscreen",      "captureFullScreen"],
+["Fullscreen+",     "captureFullScreenPlus"],
+["Fullscreen Time", "captureFullScreenTime"],
+["Window",          "captureWindow"],
+["Window+",         "captureWindowPlus"],
+["Flameshot",       "captureFlameshot"],
+["Flameshot+",      "captureFlameshotPlus"],
+["Flameshot Time",  "captureFlameshotTime"]
+]
+'''
+# Don't put comma on last array element!
+
+monitors=$(xrandr --listmonitors | grep 'Monitors:' | tr -d "Monitors: ")
+if [ "$monitors" = "2" ]; then
+    OPTIONS+='''[
+    ["Crop Laptop",     "cropLaptop '1024x768+576+900'"],
+    ["Crop Monitor",    "cropMonitor '1600x900+0+0'"]
+    ]'''
+fi
+
+obj_menu=$(echo $OPTIONS | jq -r ".[][0]" | $MENU -p " ScreenShot")
+obj_selected=$(echo $OPTIONS | jq -r ".[] | select(.[0] == \"$obj_menu\") | .[1]")
+
+$obj_selected

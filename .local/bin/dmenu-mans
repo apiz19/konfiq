@@ -1,0 +1,6 @@
+#!/bin/sh
+manpage=$(apropos . | awk '{print $1}' | rofi -dmenu -p 'Mansplain what?' -l 6 -width 500)
+if [ -z "$manpage" ];
+then echo "Manpage not found or no manpage selected"; exit
+else man -Tps $manpage | ps2pdf - | zathura -
+fi

@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# Prints all batteries, their percentage remaining and an emoji corresponding
+# to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
+# some icons  屢     
+
+
+# Loop through all attached batteries and format the info
+for battery in /sys/class/power_supply/BAT?*; do
+    # If non-first battery, print a space separator.
+    [ -n "${capacity+x}" ] && printf " "
+    # Sets up the status and capacity
+    case "$(cat "$battery/status")" in
+      "Full") status="" ;;
+      "Discharging") status="" ;;
+      "Charging") status=" " ;;
+      "Not charging") status="" ;;
+      "Unknown") status=" " ;;
+    esac
+    capacity=$(cat "$battery/capacity")
+    remaining=$(acpi | grep 'Battery 0: [DC]' | awk -F ' ' '{print $5}' | cut -c -5)
+
+    if [[ -n $remaining ]]; then
+        # printf "%s %d%% [%s]" "$status" "$capacity" "$remaining"
+        echo -n "%{F#4dc0ae}$status%{F-} $capacity% [$remaining]"
+    else
+        # printf "%s %d%%" "$status" "$capacity"
+        echo -n "%{F#4dc0ae}$status%{F-} $capacity%"
+    fi
+
+    # if [[ "$capacity" <= "10" ]] && [[ $status = "" ]]; then
+    #     # printf "%s%s" "$status" " "
+    #     notify-send "$status Charging!!!" "Battery is $capacity%" -u critical -i "/usr/share/icons/Paper/22x22/panel/battery-low.svg"
+    # else
+    #     # printf "%s" "$status"
+    #     # printf "%s %d%%" "$status" "$capacity"
+    #     exit 1
+    # fi
+
+# if [[ "$capacity" -le "10" ]]; then
+#     blink=$(date +%s);
+#     if [ $((blink % 2)) -eq 0 ]; then
+#         printf "%s%s" "$status" ""
+#     else
+#         printf "%s" "$status"
+#     fi
+# fi
+# printf "%s" "$(if [[ $capacity -lt 10]]; then blink=$(date +%s) if [ $((blink % 2)) -eq 0 ]; then printf "%s%s" "$status" ""; else printf "%s" "$status"; fi else printf "%s" "" fi)"
+
+done && exit 0

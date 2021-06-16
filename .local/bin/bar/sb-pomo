@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# print_pomo() {
+  # icon=""
+    # pidnotify=$(pgrep -f "pomo notify" > /tmp/pomo.pid)
+    # if [[ -n $pidnotify ]]; then
+    #   printf ""
+    # else
+
+
+
+  if command -v pomo > /dev/null 2>&1; then
+    pomostat=$(pomo clock | awk '{print $1}')
+    if   [ $pomostat = '--:--' ]; then
+			# printf "%s %s"  "" "$pomostat"
+			printf "%s"  " "
+    elif [ $pomostat = 'W' ]; then
+      printf "%s [%s]"  "" "$(pomo clock)"
+    elif [ $pomostat = "PW" ]; then
+      printf "%s [%s]"  "ﮫ" "$(pomo clock)"
+    elif [ $pomostat = "B" ]; then
+      printf "%s [%s]"  "" "$(pomo clock)"
+		fi
+	fi
+# }
+
+
+case $1 in
+	1) pomo start && notify-send " Pomodoro" "  START";;
+	2) pomo stop && notify-send " Pomodoro" "  STOP" ;;
+	3) pomo pause && notify-send " Pomodoro" "  PAUSE / RESTART";; # Toggle pause/restart
+esac
+
+# DWMBLOCK button support
+case $BLOCK_BUTTON in
+	1) pomo start && notify-send " Pomodoro" "  START" && kill -44 $(pidof dwmblocks) ;;
+	2) pomo stop && notify-send " Pomodoro" "  STOP" &&  kill -44 $(pidof dwmblocks) ;;
+	3) pomo pause && notify-send " Pomodoro" "  PAUSE / RESTART" && kill -44 $(pidof dwmblocks) ;; # Toggle pause/restart
+esac

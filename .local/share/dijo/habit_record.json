@@ -1,0 +1,43 @@
+[
+  {
+    "type": "Count",
+    "name": "task_done_perday",
+    "stats": {
+      "2021-05-31": 1,
+      "2021-03-08": 1
+    },
+    "goal": 2,
+    "auto": false
+  },
+  {
+    "type": "Count",
+    "name": "chigarrate",
+    "stats": {
+      "2021-03-05": 4,
+      "2021-03-08": 7,
+      "2021-03-07": 6,
+      "2021-03-04": 3,
+      "2021-03-06": 6,
+      "2021-05-31": 7,
+      "2021-03-03": 2
+    },
+    "goal": 0,
+    "auto": false
+  },
+  {
+    "type": "Count",
+    "name": "has_sport?",
+    "stats": {
+      "2021-03-04": 1
+    },
+    "goal": 0,
+    "auto": false
+  },
+  {
+    "type": "Count",
+    "name": "read_book_chapter",
+    "stats": {},
+    "goal": 0,
+    "auto": false
+  }
+]

@@ -1,0 +1,3 @@
+#!/bin/sh
+# j4-dmenu-desktop --dmenu="/usr/local/bin/dmenu -i -l 10 -m 0 -p ' Apps:'" --no-generic
+j4-dmenu-desktop --dmenu="rofi -dmenu -lines 8 -width 250 -i -sort -p ' Apps'" --no-generic

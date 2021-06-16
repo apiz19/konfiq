@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+# Sample command:
+# $ gcc main.c -o main; ./main
+
+input_file = ARGV[0]
+input_flag = ARGV[1]
+
+if input_file.include? '.c'
+  output_file = input_file[0..-3]
+else
+  puts 'ERROR: Not a C file'
+  exit
+end
+
+ARGV.clear
+
+unless input_flag.nil?
+  system "gcc #{input_file} -o #{output_file} #{input_flag}; ./#{output_file}"
+else
+  system "gcc #{input_file} -o #{output_file}; ./#{output_file}"
+end

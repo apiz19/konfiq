@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# A dwm_bar function that shows the current artist, track, position, duration, and status from cmus
+# Joe Standring <git@joestandring.com>
+# GNU GPLv3
+
+# Dependencies: cmus
+
+case $BLOCK_BUTTON in
+	1) setsid -f "$TERMINAL" -e cmus;;
+  2) cmus-remote --pause ;;  # right click, pause/unpause
+	4) cmus-remote --prev ;;  # scroll up, previous
+	5) cmus-remote --next ;;  # scroll down, next
+  6) cmus-remote --shuffle ;;
+	*) cmus-remote -Q >/dev/null 2>&1 ;;
+esac
+
+dwm_cmus () {
+    if ps -C cmus > /dev/null; then
+        ARTIST=$(cmus-remote -Q | grep -a '^tag artist' | awk '{gsub("tag artist ", "");print}')
+        TRACK=$(cmus-remote -Q | grep -a '^tag title' | awk '{gsub("tag title ", "");print}')
+        POSITION=$(cmus-remote -Q | grep -a '^position' | awk '{gsub("position ", "");print}')
+        DURATION=$(cmus-remote -Q | grep -a '^duration' | awk '{gsub("duration ", "");print}')
+        STATUS=$(cmus-remote -Q | grep -a '^status' | awk '{gsub("status ", "");print}')
+        SHUFFLE=$(cmus-remote -Q | grep -a '^set shuffle' | awk '{gsub("set shuffle ", "");print}')
+
+            if [ "$STATUS" = "playing" ]; then
+                STATUS="契"
+            else
+                STATUS="懶"
+            fi
+
+            if [ "$SHUFFLE" = "true" ]; then
+                SHUFFLE=" 咽"
+            else
+                SHUFFLE=""
+            fi
+
+        printf "%s%s %s - %s " "$STATUS" "$SHUFFLE" "$ARTIST" "$TRACK"
+        printf "%0d:%02d/" $((POSITION%3600/60)) $((POSITION%60))
+        printf "%0d:%02d " $((DURATION%3600/60)) $((DURATION%60))
+    fi
+}
+
+dwm_cmus

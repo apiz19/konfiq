@@ -1,0 +1,10 @@
+{
+ :translate-shell "0.9.6"
+ :verbose         true
+ :hl              "id"
+ :tl              "en"
+ :show-original   false
+ :view            true
+ :engine          "google"
+ :user-agent      "Mozilla/5.0 (X11; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0"
+}

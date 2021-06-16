@@ -1,0 +1,218 @@
+# -----------------------------------------------------------------------------
+# wm independent hotkeys
+# vim:ft=sxhkdrc
+# -----------------------------------------------------------------------------
+
+# -------------------------------------------------------------- BASIC BINDINGS
+
+# open Brave
+super + w
+    brave
+
+# program launcher
+super + {_, shift} d
+    {$HOME/.local/bin/dmenu-apps, $HOME/.local/bin/dmenu_mager}
+    # amenu -l
+
+# open Vimwiki index.md
+super + v
+    $TERMINAL -e nvim -c VimwikiIndex
+
+# open pulsemixer
+super + shift + a
+    st -e pulsemixer
+
+# ytfzf dmenu
+# super + shift + y
+#    st -e ytfzf -D
+
+# ------------------------------------------------------------- SYSTEM KEYBINDS
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# floating terminal emulator
+super + ctrl + Return
+	st -t 'st+'
+
+# tabbed st
+super + alt + Return
+    tabbed -r 2 st -w ''
+    # tabbed -r 2 -g 520x380-5-5 st -w ''
+
+# show power menu
+super + shift + BackSpace
+    $HOME/.local/bin/rofi-power 'xinit'
+
+# screenshot
+Print
+    $HOME/.local/bin/scrot-full
+
+super + Print
+    $HOME/.local/bin/dmenu_screenshot
+    # $HOME/.local/bin/dmenu-screenshot
+
+super + shift + Print
+    $HOME/.local/bin/flameshot-imgck
+
+# dmenu-record
+alt + shift + Print
+    $HOME/.local/bin/dmenu_ffmpeg
+
+# pulseaudio controls speaker volume up & down
+{XF86AudioRaiseVolume, XF86AudioLowerVolume}
+    pamixer {-i 1, -d 1}; \
+    ou_vol=$(pamixer --get-volume-human); \
+    jack_stat=$($HOME/bin/has_headphone); \
+    [ $jack_stat = "on" ] && icon="  Headset"; \
+    [ $jack_stat = "off" ]  && icon="  Speaker"; \
+    dunstify "$icon Output Volume: "$ou_vol -t 1000 -r 1
+    # kill -44 $(pidof dwmblocks)
+
+# pulseaudio controls mic volume up & down
+shift + {XF86AudioRaiseVolume, XF86AudioLowerVolume}
+    pamixer --default-source {-i 1, -d 1}; \
+    ou_mic=$(pamixer --default-source --get-volume-human); \
+    dunstify "  Microphone Input Volume: "$ou_mic -t 1000 -r 1
+    # kill -44 $(pidof dwmblocks)
+
+# pulseaudio controls monitor volume up & down
+alt + {XF86AudioRaiseVolume, XF86AudioLowerVolume}
+    pamixer --source 0 {-i 1, -d 1}; \
+    ou_mon=$(pamixer --source 0 --get-volume); \
+    dunstify "  Monitor Input Volume: "$ou_mon -t 1000 -r 1
+    # kill -44 $(pidof dwmblocks)
+
+# pulseaudio controls mute speaker
+XF86AudioMute
+    pamixer \
+    --toggle-mute; \
+    ou_mute=$(pamixer --get-mute); \
+    jack_stat=$($HOME/.local/bin/has_headphone); \
+    [ $jack_stat = "on" ]   && icon_on="  Headset" icon_off="  Headset"; \
+    [ $jack_stat = "off" ]    && icon_on="  Speaker" icon_off="  Speaker"; \
+    [ $ou_mute   = "true" ]  && dunstify "$icon_off MUTED" -t 1000 -r 1; \
+    [ $ou_mute   = "false" ] && dunstify "$icon_on UNMUTED" -t 1000 -r 1
+    # kill -44 $(pidof dwmblocks)
+
+# pulseaudio controls mute mic
+shift + XF86AudioMute
+    pamixer \
+    --default-source --toggle-mute; \
+    in_mute=$(pamixer --default-source  --get-mute); \
+    [ $in_mute = "true" ]  && dunstify "  Microphone Input MUTED" -t 1000 -r 1; \
+    [ $in_mute = "false" ] && dunstify "  Microphone Input UNMUTED" -t 1000 -r 1
+    # kill -44 $(pidof dwmblocks)
+
+# pulseaudio controls mute monitor
+alt + XF86AudioMute
+    pamixer \
+    --default-source 0 --toggle-mute; \
+    mo_mute=$(pamixer --source 0 --get-mute); \
+    [ $mo_mute = "true" ]  && dunstify "  Monitor Input MUTED" -t 1000 -r 1; \
+    [ $mo_mute = "false" ] && dunstify "  Monitor Input UNMUTED" -t 1000 -r 1
+    # kill -44 $(pidof dwmblocks)
+
+# screen brightness controls
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+    xbacklight {-inc 5, -dec 5}; \
+    get_brightness=$(xbacklight -get | cut -f 1 -d '.'); \
+    dunstify "  Brightness: "$get_brightness -t 1000 -r 1
+    # kill -44 $(pidof dwmblocks)
+
+# slock with widom quote
+super + alt + F4
+# XF86PowerOff
+    slock -m "$(fortune wisdom -l)"
+
+#super + F4
+#    feh --bg-fill -Z $WALLPAPER3
+
+# super + F5
+#     monitors=$(xrandr --listmonitors | grep 'Monitors:' | tr -d "Monitors: "); \
+#     if [ $monitors = "2" ]; \
+#     then feh --bg-fill -Z $WALLPAPER1 --bg-fill -Z $WALLPAPER1; \
+#     else feh --bg-fill -Z $WALLPAPER1; \
+#     fi
+
+# super + shift + F5
+#     monitors=$(xrandr --listmonitors | grep 'Monitors:' | tr -d "Monitors: "); \
+#     if [ $monitors = "2" ]; \
+#     then feh --bg-fill -Z $WALLPAPER2 --bg-fill -Z $WALLPAPER1; \
+#     else feh --bg-fill -Z $WALLPAPER2; \
+#     fi
+
+# application tools on Fn Button
+super + F1
+    keybind-helper
+
+
+# networkmanager-dmenu
+super + F8
+    networkmanager_dmenu
+
+# gromit-mpx
+super + F9
+    gromit-mpx
+
+# arandr
+super + F10
+    $HOME/.local/bin/dmenu-monitor
+
+# dmenu-mount
+super + F11
+    dmenu-mount
+
+# dmenu-umount
+super + F12
+    dmenu-umount
+
+# # webcam with ffplay
+# super + ~F10
+# 	{$HOME/.local/bin/ffplay-launcher,pkill -f 'ffplay'}
+
+# # key-mon
+# super + ~F11
+#     {$HOME/.local/bin/key-mon-launcher, killall key-mon}
+
+# # dwmtray
+# super + shift + ~b
+#     {$HOME/.local/bin/polybar-toggle show, $HOME/bin/polybar-toggle hide}
+
+# clipmenu
+super + {_, shift} + p
+    {clipmenu, clipdel -d "."}
+
+# rofi-pass
+alt + shift + p
+    rofi-pass
+
+# rofi-emoji
+super + e
+    $HOME/.local/bin/rofi-emoji-run
+
+# application tab
+# super + grave
+#     # $HOME/.local/bin/rofi-application-tab
+#     $HOME/.local/bin/dmenu_switcher
+
+# translate-shell
+super + {_, shift} + Home
+    {$HOME/.local/bin/dmenu-trans, $HOME/.local/bin/word-lookup}
+
+# launch manpage as pdf
+alt + shift + question
+    $HOME/.local/bin/dmenu-mans
+
+# # dmenu-pass
+# super + {_,shift} + backslash
+#     {$HOME/.local/bin/passtore 0, $HOME/.local/bin/dmenu-pass}
+
+# launch htop/glances
+super + shift + 0
+    $TERMINAL -e glances
+
+# launch dmenu_kill
+alt + shift + End
+    $HOME/.local/bin/dmenu_kill

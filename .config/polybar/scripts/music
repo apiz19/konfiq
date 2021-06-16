@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ARTIST=$(playerctl metadata artist 2>/dev/null)
+TITLE=$(playerctl metadata title 2>/dev/null)
+IDLE="No player found"
+ICON=""
+
+# 
+# 
+
+# while [[ $ARTIST || $TITLE == $IDLE ]]; do
+#     echo -n "%{F#4dc0ae}$ICON%{F-} %{F#ffffa0}$ARTIST%%{F-} %{F#ffffa0}[$TITLE]%{F-}"
+# done
+
+if [[ $ARTIST || $TITLE != $IDLE ]]; then
+    echo -n "%{F#4dc0ae}$ICON%{F-} %{F#ffffa0}$ARTIST%{F-} - %{F#ffffa0}$TITLE%{F-}"
+  else
+    echo -n "%{F#4dc0ae}ﱙ%{F-}"
+fi

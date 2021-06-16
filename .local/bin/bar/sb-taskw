@@ -1,0 +1,32 @@
+#!/bin/sh
+
+icon=""
+most_urgent_desc=`task rc.verbose: rc.report.next.columns:description rc.report.next.labels:1 limit:1 next`
+most_urgent_id=`task rc.verbose: rc.report.next.columns:id rc.report.next.labels:1 limit:1 next`
+most_urgent_due=`task rc.verbose: rc.report.next.columns:due.relative rc.report.next.labels:1 limit:1 next`
+is_active=`task list $most_urgent_id | grep "Active" | awk '{print $2}'`
+
+if [ "$is_active" == "Active" ]; then
+  printf "%s [A#%s] %s" "$icon" "$most_urgent_id" "$most_urgent_desc"
+elif [ -z $is_active ]; then
+  printf "%s [#%s] %s" "$icon" "$most_urgent_id" "$most_urgent_desc"
+fi
+
+
+case $1 in
+	1) task $most_urgent_id start && pomo start && notify-send " TIMEWARRIOR" "  START" ;;
+    2) task $most_urgent_id done && notify-send " TIMEWARRIOR" "  DONE" ;;
+    3) task $most_urgent_id stop && pomo pause && notify-send " TIMEWARRIOR" "  STOP" ;;
+    4) notify-send " TIMEWARRIOR" "$(task ls | awk '{ $1=$2="";} NF=NF' | cut -d'-' -f2)" ;;
+esac
+
+# DWMBLOCK button support
+case $BLOCK_BUTTON in
+	1) task $most_urgent_id start && pomo start && notify-send " TIMEWARRIOR" "  START" ;; # && kill -44 $(pidof dwmblocks) ;;
+	2) task $most_urgent_id done && notify-send " TIMEWARRIOR" "  DONE" ;; # && kill -44 $(pidof dwmblocks) ;;
+	3) task $most_urgent_id stop && pomo pause && notify-send " TIMEWARRIOR" "  STOP" ;; # && kill -44 $(pidof dwmblocks) ;;
+  4) notify-send " TIMEWARRIOR" "$(task ls | awk '{ $1=$2="";} NF=NF' | cut -d'-' -f2)" ;;
+esac
+
+# echo "$most_urgent_desc · $most_urgent_due"
+# icon_most_urgent_due="%{F#cc241d%{F-} $most_urgent_due"
