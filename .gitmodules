@@ -1,0 +1,6 @@
+[submodule ".config/.config/nvim/autoload/plugged/auto-pairs"]
+	path = .config/.config/nvim/autoload/plugged/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "tmux-resurrect"]
+	path = tmux-resurrect
+	url = https://git::@github.com/tmux-plugins/tmux-resurrect

@@ -139,8 +139,13 @@ source /usr/share/zsh/plugins/gitio-zsh/gitio.plugin.zsh 2>/dev/null
 # Load wakatime integration plugin
 source /usr/share/zsh/plugins/zsh-wakatime/zsh-wakatime.plugin.zsh 2>/dev/null
 
+# Load Forgit, interactive FZF git
+[ -f /usr/share/zsh/plugins/forgit/fotgit.plugin.zsh ] && source /usr/share/zsh/plugins/forgit/fotgit.plugin.zsh
+
 # Load dotbare as dotfiles management
-# source /usr/share/zsh/plugins/dotbare/dotbare.plugin.zsh 2>/dev/null
+ [ -f /usr/share/zsh/plugins/dotbare/dotbare.plugin.zsh ] && source /usr/share/zsh/plugins/dotbare/dotbare.plugin.zsh
+_dotbare_completion_cmd
+# _dotbare_completion_git
 
 # # Load better zsh-vi-mode
 # source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
