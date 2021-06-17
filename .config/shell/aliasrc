@@ -12,6 +12,7 @@ alias \
 	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
     ttui="/usr/bin/taskwarrior-tui" \
+    dots="dotbare" \
 	ffmpeg="ffmpeg -hide_banner"
 	# cp="cp -iv" \
 	# mv="mv -iv" \

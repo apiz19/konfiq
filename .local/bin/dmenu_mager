@@ -27,6 +27,7 @@ OPTIONS='''
   [ "bluetooth",              "dmenu_bluetooth" ],
   [ "evince",                 "evince" ],
   [ "droidcam",               "dmenu-droidcam" ],
+  [ "service",                "dmenu-openrc" ],
   [ "iptv",                   "dmenu_iptv" ]
 ]
 '''

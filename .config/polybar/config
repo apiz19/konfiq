@@ -119,7 +119,7 @@ font-6 = JetBrainsMono Nerd Font Bandit:weight=Medium:size=9;2
 
 modules-left = sp1 spotify_1
 modules-center =
-modules-right = nettraf sp1 wlan1 sp1 news sp1 temperature cpu memory filesystem bluetooth pulseaudio microphone sp1 backlight battery sp1 bat-state record-ffmpeg pacman sudo
+modules-right = nettraf sp1 wlan1 sp1 news sp1 temperature cpu memory filesystem bluetooth pulseaudio microphone sp1 backlight battery sp1 bat-state droidcam record-ffmpeg pacman sudo
 
 tray-position = left
 tray-padding = 1
@@ -180,7 +180,7 @@ interval = 3600
 exec = ~/.local/bin/bar/sb-news
 tail = true
 format = " <label>"
-format-prefix = ""
+format-prefix = ""
 format-prefix-padding-right = 1
 format-prefix-foreground = ${colors.biruadem}
 format-foreground = ${colors.foreground}
@@ -340,6 +340,16 @@ tail = true
 interval = 1
 format = "<label> "
 format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+[module/droidcam]
+type = custom/script
+exec = ~/.config/polybar/scripts/droidcam
+exec-if = "pgrep -x 'droidcam-cli'"
+tail = true
+interval = 1
+format = "<label> "
+format-foreground = ${colors.alert}
 format-background = ${colors.background}
 
 [module/record-ffmpeg]
@@ -694,7 +704,7 @@ secondary-layout-symbol = [M]
 label-title = %title%
 label-title-padding = 1
 label-title-foreground = ${colors.foreground}
-label-title-maxlen = 80
+label-title-maxlen = 70
 
 ; Symbol of current layout
 ; Available tokens:

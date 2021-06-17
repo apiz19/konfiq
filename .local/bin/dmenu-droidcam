@@ -9,11 +9,21 @@ function audio_only() {
 }
 
 function video_only() {
-  droidcam-cli 192.168.100.2 4747
+  droidcam-cli 192.168.100.21 4747 # @G12
+  # droidcam-cli 192.168.100.2 4747 # @Kntrs
 }
 
 function audio_video() {
   droidcam-cli -a -v 192.168.100.2 4747
+}
+
+function video_via_usb() {
+  env ANDROID_SERIAL=864bdab2 droidcam-cli -v adb 4747
+  sleep 2
+  # mpv_toggle
+  # show_mpv
+  mpv --autofit-smaller=200 av://v4l2:/dev/video2 --profile=low-latency --untimed
+
 }
 
 function kill_droidcam() {
@@ -21,8 +31,15 @@ function kill_droidcam() {
     exit
 }
 
-# OPTIONS=$(echo -e "Audio-only\nVideo-only\nAudio-Video" | $MENU -p " Translate")
+function mpv_toggle() {
+  mpv av://v4l2:/dev/video2 --profile=low-latency --untimed
+  exit
+}
 
+# function show_mpv() {
+#     response=$(printf "No\\nYes" | $DMENU -i -p "show mpv?") &&
+#     [ "$response" = "Yes" ] && sleep 2 && mpv_toggle
+# }
 
 function asktoend() {
     response=$(printf "No\\nYes" | $DMENU -i -p "droidcam still active. Kill droidcam?") &&
@@ -30,11 +47,12 @@ function asktoend() {
 }
 
 function pilih() {
-    choice=$(printf "Audio-only\\nVideo-only\\nAudio-Video" | $DMENU -i -p "Select recording style:")
+    choice=$(printf "Audio-only\\nVideo-only\\nAudio-Video\\nVideo-usb" | $DMENU -i -p "Select mode:")
     case "$choice" in
         Audio-only) audio_only;;
         Video-only) video_only;;
         Audio-Video) audio_video;;
+        Video-usb) video_via_usb;;
     esac
 }
 
@@ -42,5 +60,6 @@ case $1 in
   Audio-only) audio_only ;;
   Video-only) video_only ;;
   Audio-Video) audio_video ;;
+  Video-usb) video_via_usb;;
   *) ([ -n "$(pgrep droidcam-cli)" ] && asktoend && exit) || pilih ;;
 esac
